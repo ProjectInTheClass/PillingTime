@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  PillingTime
 //
-//  Created by Enirobot on 2018. 1. 17..
-//  Copyright © 2018년 Enirobot. All rights reserved.
+//  Created by iMac05 on 1/17/18.
+//  Copyright © 2018 iMac05. All rights reserved.
 //
 
 import UIKit
