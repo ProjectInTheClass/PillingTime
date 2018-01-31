@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DF5D03E2021B32E00E8E39A /* TimeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5D03D2021B32E00E8E39A /* TimeLineTableViewCell.swift */; };
+		1DF5D0402021B3AF00E8E39A /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5D03F2021B3AF00E8E39A /* TimeLineTableViewController.swift */; };
+		1DF5D0422021B51100E8E39A /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5D0412021B51100E8E39A /* TimeLine.swift */; };
 		F41D472A200F53460000E758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D4729200F53460000E758 /* AppDelegate.swift */; };
 		F41D472C200F53460000E758 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D472B200F53460000E758 /* ViewController.swift */; };
 		F41D472F200F53460000E758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D472D200F53460000E758 /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DF5D03D2021B32E00E8E39A /* TimeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewCell.swift; sourceTree = "<group>"; };
+		1DF5D03F2021B3AF00E8E39A /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
+		1DF5D0412021B51100E8E39A /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
 		F41D4726200F53460000E758 /* PillingTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillingTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41D4729200F53460000E758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F41D472B200F53460000E758 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 				F41D4730200F53460000E758 /* Assets.xcassets */,
 				F41D4732200F53460000E758 /* LaunchScreen.storyboard */,
 				F41D4735200F53460000E758 /* Info.plist */,
+				1DF5D03D2021B32E00E8E39A /* TimeLineTableViewCell.swift */,
+				1DF5D03F2021B3AF00E8E39A /* TimeLineTableViewController.swift */,
+				1DF5D0412021B51100E8E39A /* TimeLine.swift */,
 			);
 			path = PillingTime;
 			sourceTree = "<group>";
@@ -136,7 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF5D0422021B51100E8E39A /* TimeLine.swift in Sources */,
+				1DF5D03E2021B32E00E8E39A /* TimeLineTableViewCell.swift in Sources */,
 				F41D472C200F53460000E758 /* ViewController.swift in Sources */,
+				1DF5D0402021B3AF00E8E39A /* TimeLineTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
