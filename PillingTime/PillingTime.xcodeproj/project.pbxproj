@@ -15,6 +15,7 @@
 		F41D472F200F53460000E758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D472D200F53460000E758 /* Main.storyboard */; };
 		F41D4731200F53460000E758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D4730200F53460000E758 /* Assets.xcassets */; };
 		F41D4734200F53460000E758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D4732200F53460000E758 /* LaunchScreen.storyboard */; };
+		F42705B02020E28E00E4179C /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42705AF2020E28E00E4179C /* Pill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F41D4730200F53460000E758 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F41D4733200F53460000E758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F41D4735200F53460000E758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F42705AF2020E28E00E4179C /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,13 @@
 				F41D4730200F53460000E758 /* Assets.xcassets */,
 				F41D4732200F53460000E758 /* LaunchScreen.storyboard */,
 				F41D4735200F53460000E758 /* Info.plist */,
+<<<<<<< HEAD
 				1DF5D03D2021B32E00E8E39A /* TimeLineTableViewCell.swift */,
 				1DF5D03F2021B3AF00E8E39A /* TimeLineTableViewController.swift */,
 				1DF5D0412021B51100E8E39A /* TimeLine.swift */,
+=======
+				F42705AF2020E28E00E4179C /* Pill.swift */,
+>>>>>>> 1bc14d95bd48f2134c7fa3d839465608d1514687
 			);
 			path = PillingTime;
 			sourceTree = "<group>";
@@ -145,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				1DF5D0422021B51100E8E39A /* TimeLine.swift in Sources */,
 				1DF5D03E2021B32E00E8E39A /* TimeLineTableViewCell.swift in Sources */,
+=======
+				F42705B02020E28E00E4179C /* Pill.swift in Sources */,
+>>>>>>> 1bc14d95bd48f2134c7fa3d839465608d1514687
 				F41D472C200F53460000E758 /* ViewController.swift in Sources */,
 				1DF5D0402021B3AF00E8E39A /* TimeLineTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
