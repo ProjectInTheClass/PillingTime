@@ -15,6 +15,12 @@
 		F41D4731200F53460000E758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D4730200F53460000E758 /* Assets.xcassets */; };
 		F41D4734200F53460000E758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D4732200F53460000E758 /* LaunchScreen.storyboard */; };
 		F42705B02020E28E00E4179C /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42705AF2020E28E00E4179C /* Pill.swift */; };
+		F4BFDE82202344B4004C558F /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE81202344B4004C558F /* AddTableViewController.swift */; };
+		F4BFDE8420234D5A004C558F /* AddImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE8320234D5A004C558F /* AddImageTableViewCell.swift */; };
+		F4BFDE86202375A7004C558F /* AddTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE85202375A7004C558F /* AddTitleTableViewCell.swift */; };
+		F4BFDE8820237719004C558F /* AddMemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE8720237719004C558F /* AddMemoTableViewCell.swift */; };
+		F4BFDE8A202379F0004C558F /* AddAlarmTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE89202379F0004C558F /* AddAlarmTableTableViewCell.swift */; };
+		F4BFDE8C20239D47004C558F /* DatePickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE8B20239D47004C558F /* DatePickerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		F41D4733200F53460000E758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F41D4735200F53460000E758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F42705AF2020E28E00E4179C /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		F4BFDE81202344B4004C558F /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
+		F4BFDE8320234D5A004C558F /* AddImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageTableViewCell.swift; sourceTree = "<group>"; };
+		F4BFDE85202375A7004C558F /* AddTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitleTableViewCell.swift; sourceTree = "<group>"; };
+		F4BFDE8720237719004C558F /* AddMemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoTableViewCell.swift; sourceTree = "<group>"; };
+		F4BFDE89202379F0004C558F /* AddAlarmTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmTableTableViewCell.swift; sourceTree = "<group>"; };
+		F4BFDE8B20239D47004C558F /* DatePickerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,12 @@
 				1DF5D03D2021B32E00E8E39A /* TimeLineTableViewCell.swift */,
 				1DF5D03F2021B3AF00E8E39A /* TimeLineTableViewController.swift */,
 				F42705AF2020E28E00E4179C /* Pill.swift */,
+				F4BFDE81202344B4004C558F /* AddTableViewController.swift */,
+				F4BFDE8320234D5A004C558F /* AddImageTableViewCell.swift */,
+				F4BFDE85202375A7004C558F /* AddTitleTableViewCell.swift */,
+				F4BFDE8720237719004C558F /* AddMemoTableViewCell.swift */,
+				F4BFDE89202379F0004C558F /* AddAlarmTableTableViewCell.swift */,
+				F4BFDE8B20239D47004C558F /* DatePickerTableViewController.swift */,
 			);
 			path = PillingTime;
 			sourceTree = "<group>";
@@ -145,11 +163,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BFDE8A202379F0004C558F /* AddAlarmTableTableViewCell.swift in Sources */,
 				1DF5D03E2021B32E00E8E39A /* TimeLineTableViewCell.swift in Sources */,
 				F42705B02020E28E00E4179C /* Pill.swift in Sources */,
+				F4BFDE8420234D5A004C558F /* AddImageTableViewCell.swift in Sources */,
 				F41D472C200F53460000E758 /* ViewController.swift in Sources */,
+				F4BFDE86202375A7004C558F /* AddTitleTableViewCell.swift in Sources */,
 				1DF5D0402021B3AF00E8E39A /* TimeLineTableViewController.swift in Sources */,
+				F4BFDE8820237719004C558F /* AddMemoTableViewCell.swift in Sources */,
+				F4BFDE8C20239D47004C558F /* DatePickerTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
+				F4BFDE82202344B4004C558F /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

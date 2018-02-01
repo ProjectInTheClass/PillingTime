@@ -175,7 +175,7 @@
                     <navigationItem key="navigationItem" title="Home" id="sHO-CD-qWU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6z4-HV-ivB">
                             <connections>
-                                <segue destination="I8N-Pd-EZ1" kind="show" id="h4U-v2-Scu"/>
+                                <segue destination="Ip3-6Y-dgJ" kind="show" id="kYw-gn-wrL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -262,7 +262,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ixe-7d-Up0"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VWQ-Y1-Yuj">
                             <connections>
-                                <segue destination="I8N-Pd-EZ1" kind="show" id="99V-7X-QS6"/>
+                                <segue destination="Ip3-6Y-dgJ" kind="show" id="Bzd-uE-8SW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -274,28 +274,36 @@
         <!--Add-->
         <scene sceneID="zt4-Lw-ODt">
             <objects>
-                <tableViewController id="Ip3-6Y-dgJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0IK-fO-0lF">
+                <tableViewController id="Ip3-6Y-dgJ" customClass="AddTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0IK-fO-0lF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="169" id="ihz-54-8lt">
-                                <rect key="frame" x="0.0" y="28" width="320" height="169"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddImageTableViewCell" rowHeight="169" id="ihz-54-8lt" customClass="AddImageTableViewCell" customModule="PillingTime" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihz-54-8lt" id="8xl-5D-sNz">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="168.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ES4-Cc-daI">
-                                            <rect key="frame" x="89" y="11" width="142" height="142"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SelectImage" translatesAutoresizingMaskIntoConstraints="NO" id="ES4-Cc-daI">
+                                            <rect key="frame" x="89" y="13" width="142" height="142"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ES4-Cc-daI" secondAttribute="bottom" constant="13.5" id="SPw-LP-mMe"/>
+                                        <constraint firstAttribute="trailing" secondItem="ES4-Cc-daI" secondAttribute="trailing" constant="89" id="k7W-U2-t9s"/>
+                                        <constraint firstItem="ES4-Cc-daI" firstAttribute="leading" secondItem="8xl-5D-sNz" secondAttribute="leading" constant="89" id="r4H-HD-4oR"/>
+                                        <constraint firstItem="ES4-Cc-daI" firstAttribute="top" secondItem="8xl-5D-sNz" secondAttribute="top" constant="13" id="wiZ-Qj-wFh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addImageView" destination="ES4-Cc-daI" id="QLF-Vs-0p0"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="h7i-VA-Iv7">
-                                <rect key="frame" x="0.0" y="197" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddTitleTableViewCell" id="h7i-VA-Iv7" customClass="AddTitleTableViewCell" customModule="PillingTime" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="224.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h7i-VA-Iv7" id="r8U-cx-DVC">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -317,9 +325,13 @@
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="AddTitleLable" destination="Q8g-Qn-ASs" id="ysj-f7-XEW"/>
+                                    <outlet property="AddTitleTextField" destination="7d4-pB-piW" id="H20-wf-l3f"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ch7-OH-Yb5">
-                                <rect key="frame" x="0.0" y="241" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddMemoTableViewCell" id="ch7-OH-Yb5" customClass="AddMemoTableViewCell" customModule="PillingTime" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="268.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ch7-OH-Yb5" id="y8j-M2-pA9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -341,9 +353,13 @@
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="AddMemoLable" destination="goz-BB-kto" id="bhn-gj-UYz"/>
+                                    <outlet property="AddMemoTextField" destination="NIz-hT-I2g" id="thi-jt-YHo"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="zlU-Ia-6z1" detailTextLabel="KpU-ug-PXM" style="IBUITableViewCellStyleValue1" id="igP-v1-v9u">
-                                <rect key="frame" x="0.0" y="285" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AddAlarmTableViewCell" textLabel="zlU-Ia-6z1" detailTextLabel="KpU-ug-PXM" style="IBUITableViewCellStyleValue1" id="igP-v1-v9u">
+                                <rect key="frame" x="0.0" y="312.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="igP-v1-v9u" id="HYt-tG-ZUo">
                                     <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
@@ -366,61 +382,75 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Gzg-Ig-PqH" kind="modal" id="TVA-zf-gXz"/>
+                                    <segue destination="bKp-cR-N2T" kind="show" id="cTM-wx-5CR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="59" id="6fv-VU-Ifv">
-                                <rect key="frame" x="0.0" y="329" width="320" height="59"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AddAlarmTableTableViewCell" rowHeight="59" id="6fv-VU-Ifv" customClass="AddAlarmTableTableViewCell" customModule="PillingTime" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="356.5" width="320" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6fv-VU-Ifv" id="fFk-Em-riM">
                                     <rect key="frame" x="0.0" y="0.0" width="286" height="58.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgz-cf-XPo">
-                                            <rect key="frame" x="16" y="11" width="270" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgz-6M-aEV">
-                                            <rect key="frame" x="17" y="33" width="269" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Vy-3C-HFn">
+                                            <rect key="frame" x="16" y="11" width="270" height="37"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-gp-gyy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOS-mQ-wqa">
+                                                    <rect key="frame" x="1" y="22" width="269" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="1Vy-3C-HFn" secondAttribute="bottom" constant="10.5" id="4f1-Ku-x2X"/>
+                                        <constraint firstItem="1Vy-3C-HFn" firstAttribute="leading" secondItem="fFk-Em-riM" secondAttribute="leading" constant="16" id="l4G-QL-FT9"/>
+                                        <constraint firstItem="1Vy-3C-HFn" firstAttribute="top" secondItem="fFk-Em-riM" secondAttribute="top" constant="11" id="qeF-hy-EZ5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1Vy-3C-HFn" secondAttribute="trailing" constant="34" id="rCO-au-TjP"/>
+                                </constraints>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Ip3-6Y-dgJ" id="2ge-Dy-Nbt"/>
                             <outlet property="delegate" destination="Ip3-6Y-dgJ" id="Xo6-I4-XCj"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add" id="nBW-dB-TV8">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="nRo-sQ-Llc"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="GRp-yD-UTe"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taW-fj-WL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="-626"/>
+            <point key="canvasLocation" x="851" y="-626"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="uNY-UU-pYF">
             <objects>
-                <tableViewController id="bKp-cR-N2T" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8tC-Ty-8xl">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="bKp-cR-N2T" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8tC-Ty-8xl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="1iy-UM-AzW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="176" id="zHo-T0-uS6">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zHo-T0-uS6" id="cEo-pe-9Le">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="175.5"/>
@@ -440,8 +470,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="요일 선택" id="fE2-U0-27w">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bhf-k1-phX">
-                                        <rect key="frame" x="0.0" y="204" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Bhf-k1-phX">
+                                        <rect key="frame" x="0.0" y="267" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bhf-k1-phX" id="A3M-Vu-eqe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -450,37 +480,94 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-jX-ojt">
                                                     <rect key="frame" x="16" y="6" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="월"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                    <state key="normal" title="월">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="disabled" title="월">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="selected" title="월">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9A-4e-X9p">
                                                     <rect key="frame" x="58" y="6" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="화"/>
+                                                    <state key="normal" title="화">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="disabled" title="화">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="selected" title="화">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKX-2e-slD">
                                                     <rect key="frame" x="100" y="6" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="수"/>
+                                                    <state key="normal" title="수">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="disabled" title="수">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="selected" title="수">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfS-Sa-JXd">
                                                     <rect key="frame" x="142" y="6" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="목"/>
+                                                    <state key="normal" title="목">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="disabled" title="목">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="selected" title="목">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djG-f0-cfE">
                                                     <rect key="frame" x="184" y="6" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="금"/>
+                                                    <state key="normal" title="금">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="disabled" title="금">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="selected" title="금">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwI-pK-6cS">
                                                     <rect key="frame" x="227" y="6" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="토"/>
+                                                    <state key="normal" title="토">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="disabled" title="토">
+                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="selected" title="토">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paN-TL-awK">
                                                     <rect key="frame" x="270" y="6" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="일"/>
+                                                    <state key="normal" title="일">
+                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="disabled" title="일">
+                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <state key="selected" title="알">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -494,45 +581,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="O2q-AY-iqK">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="E5N-XN-h9f"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="dBr-Gq-05o"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Kg-Nh-HfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="166"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cUk-IV-w3B">
-            <objects>
-                <navigationController id="Gzg-Ig-PqH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rLI-UV-bhG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="bKp-cR-N2T" kind="relationship" relationship="rootViewController" id="uqp-VT-bgE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ksv-n0-HxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1958" y="166"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="19o-59-UFR">
-            <objects>
-                <navigationController id="I8N-Pd-EZ1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="reO-gg-g0e">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Ip3-6Y-dgJ" kind="relationship" relationship="rootViewController" id="Y9Z-LO-Vz2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iFW-U7-dws" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="945" y="-626"/>
+            <point key="canvasLocation" x="1791" y="-626"/>
         </scene>
         <!--List-->
         <scene sceneID="mNq-Gv-Ta5">
@@ -645,6 +699,7 @@
     </scenes>
     <resources>
         <image name="List" width="25" height="30"/>
+        <image name="SelectImage" width="153" height="153"/>
         <image name="TimeLine" width="25" height="30"/>
         <image name="home" width="30" height="26"/>
         <image name="misty-day" width="42" height="37"/>
@@ -652,6 +707,6 @@
         <image name="sunrise" width="49" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h4U-v2-Scu"/>
+        <segue reference="kYw-gn-wrL"/>
     </inferredMetricsTieBreakers>
 </document>

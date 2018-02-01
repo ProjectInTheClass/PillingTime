@@ -67,3 +67,19 @@ enum Days {
     case 토
     case 일
 }
+
+
+enum ToDoSectionType {
+    case image
+    case title
+    case memo
+    case alarmAdd
+    //case alarmTables([AlarmTable])
+    
+}
+
+
+enum SectionType {
+    case Information
+    case Alarm
+}
