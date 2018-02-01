@@ -37,12 +37,12 @@ class TimeLineTableViewController: UITableViewController {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "header"
     }
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        <#code#>
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Footer"
     }
 
     /*
