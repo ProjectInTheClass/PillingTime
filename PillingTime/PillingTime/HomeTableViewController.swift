@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Foundation
 
 class HomeTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    var Pills: [Pill] = []
+    
     let imageAndTime = [["아침", "sunrise"], ["점심", "sun"], ["저녁", "misty-day"]]
+    let weekdays = ["월", "화", "수", "목", "금", "토", "일"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +28,14 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 145
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 145
     }
 
     // MARK: - Table view data source
@@ -59,15 +63,26 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeImageCollectionViewCell", for: indexPath) as! HomeImageCollectionViewCell
         
-        cell.collectionImageView.image = UIImage(named: "sun")
+        cell.collectionImageView.image = UIImage(named: "pill")
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        let cal = Calendar(identifier: .gregorian)
+        let now = Date()
+        let comps = cal.dateComponents([.weekday], from: now)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        let stringDate = dateFormatter.string(from: now)
+        return "\(stringDate) (\(weekdays[comps.weekday! - 1]))"
     }
     
 
