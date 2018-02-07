@@ -75,7 +75,6 @@ enum ToDoSectionType {
     case memo
     case alarmAdd
     //case alarmTables([AlarmTable])
-    
 }
 
 
@@ -83,3 +82,6 @@ enum SectionType {
     case Information
     case Alarm
 }
+
+
+

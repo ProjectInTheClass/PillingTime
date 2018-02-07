@@ -18,6 +18,8 @@
 		F43DAC092024B53400C19155 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43DAC082024B53400C19155 /* HomeTableViewCell.swift */; };
 		F43DAC0B2024B77F00C19155 /* HomeImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43DAC0A2024B77F00C19155 /* HomeImageCollectionViewCell.swift */; };
 		F43DAC0D2024B85C00C19155 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43DAC0C2024B85C00C19155 /* HomeTableViewController.swift */; };
+		F43DAC0F202A95B700C19155 /* AddPillPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43DAC0E202A95B700C19155 /* AddPillPickerViewController.swift */; };
+		F43DAC11202A994400C19155 /* AddTimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43DAC10202A994400C19155 /* AddTimePickerViewController.swift */; };
 		F4BFDE82202344B4004C558F /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE81202344B4004C558F /* AddTableViewController.swift */; };
 		F4BFDE8420234D5A004C558F /* AddImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE8320234D5A004C558F /* AddImageTableViewCell.swift */; };
 		F4BFDE86202375A7004C558F /* AddTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BFDE85202375A7004C558F /* AddTitleTableViewCell.swift */; };
@@ -40,6 +42,8 @@
 		F43DAC082024B53400C19155 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		F43DAC0A2024B77F00C19155 /* HomeImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		F43DAC0C2024B85C00C19155 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		F43DAC0E202A95B700C19155 /* AddPillPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillPickerViewController.swift; sourceTree = "<group>"; };
+		F43DAC10202A994400C19155 /* AddTimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimePickerViewController.swift; sourceTree = "<group>"; };
 		F4BFDE81202344B4004C558F /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		F4BFDE8320234D5A004C558F /* AddImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageTableViewCell.swift; sourceTree = "<group>"; };
 		F4BFDE85202375A7004C558F /* AddTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				1DF5D03F2021B3AF00E8E39A /* TimeLineTableViewController.swift */,
 				F42705AF2020E28E00E4179C /* Pill.swift */,
 				F4BFDE81202344B4004C558F /* AddTableViewController.swift */,
+				F43DAC0E202A95B700C19155 /* AddPillPickerViewController.swift */,
+				F43DAC10202A994400C19155 /* AddTimePickerViewController.swift */,
 				F4BFDE8320234D5A004C558F /* AddImageTableViewCell.swift */,
 				F4BFDE85202375A7004C558F /* AddTitleTableViewCell.swift */,
 				F4BFDE8720237719004C558F /* AddMemoTableViewCell.swift */,
@@ -175,8 +181,10 @@
 				F4BFDE8A202379F0004C558F /* AddAlarmTableTableViewCell.swift in Sources */,
 				F43DAC0B2024B77F00C19155 /* HomeImageCollectionViewCell.swift in Sources */,
 				1DF5D03E2021B32E00E8E39A /* TimeLineTableViewCell.swift in Sources */,
+				F43DAC11202A994400C19155 /* AddTimePickerViewController.swift in Sources */,
 				F42705B02020E28E00E4179C /* Pill.swift in Sources */,
 				F43DAC0D2024B85C00C19155 /* HomeTableViewController.swift in Sources */,
+				F43DAC0F202A95B700C19155 /* AddPillPickerViewController.swift in Sources */,
 				F4BFDE8420234D5A004C558F /* AddImageTableViewCell.swift in Sources */,
 				F41D472C200F53460000E758 /* ViewController.swift in Sources */,
 				F4BFDE86202375A7004C558F /* AddTitleTableViewCell.swift in Sources */,

@@ -13,6 +13,9 @@ class AddTableViewController: UITableViewController {
     var sectionsType: [[ToDoSectionType]] = [[.image, .title, .memo],
                                                      [.alarmAdd]]
     
+    var titleTextField: UITextField?
+    var memoTextField: UITextField?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +27,13 @@ class AddTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    /*
+    func save() {
+        guard let title = titleTextField?.text else { return }
+        guard let memo = memoTextField?.text else { return }
+        
+    }
+    */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,9 +67,11 @@ class AddTableViewController: UITableViewController {
             return cell
         case .title:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddTitleTableViewCell", for: indexPath) as! AddTitleTableViewCell
+            //titleTextField = cell.AddTitleTextField
             return cell
         case .memo:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddMemoTableViewCell", for: indexPath) as! AddMemoTableViewCell
+            //memoTextField = cell.AddMemoTextField
             return cell
         case .alarmAdd:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddAlarmTableViewCell", for: indexPath)
