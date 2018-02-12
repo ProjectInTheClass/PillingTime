@@ -12,11 +12,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List-->
+        <!--목록-->
         <scene sceneID="mNq-Gv-Ta5">
             <objects>
                 <navigationController id="zlb-mL-FtH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="List" id="VhB-4b-c2j"/>
+                    <tabBarItem key="tabBarItem" title="목록" image="List" id="VhB-4b-c2j"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Iw-Oy-NSN">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -148,7 +148,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="목록" id="eGM-Yg-yrh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="BSw-f1-Pxw">
+                        <barButtonItem key="leftBarButtonItem" title="편집" id="BSw-f1-Pxw">
                             <color key="tintColor" red="0.41568627450980389" green="0.68627450980392157" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WMg-eF-Je2">
@@ -163,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="-114.375" y="-627.46478873239437"/>
         </scene>
-        <!--Add-->
+        <!--+-->
         <scene sceneID="AhZ-5d-1cd">
             <objects>
                 <tableViewController id="Wlo-B8-Eds" customClass="AddTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -517,14 +517,14 @@
                             <outlet property="delegate" destination="Wlo-B8-Eds" id="9Q4-DB-1lW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add" id="5IN-k9-1rX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bMG-s2-y1P">
+                    <navigationItem key="navigationItem" title="+" id="5IN-k9-1rX">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="bMG-s2-y1P">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="modalDismiss:" destination="Wlo-B8-Eds" id="0nN-JU-hK1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a2s-Wm-UPJ">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="a2s-Wm-UPJ">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tabSave:" destination="Wlo-B8-Eds" id="FE5-JL-xhX"/>
@@ -551,7 +551,7 @@
             </objects>
             <point key="canvasLocation" x="1758.75" y="-627.46478873239437"/>
         </scene>
-        <!--Setting-->
+        <!--설정-->
         <scene sceneID="nre-X3-d10">
             <objects>
                 <tableViewController id="Pfh-kx-oHl" customClass="SettingTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -644,14 +644,14 @@
                             <outlet property="delegate" destination="Pfh-kx-oHl" id="scj-YJ-RNu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="hgO-N6-fi9">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ttN-YT-TAD">
+                    <navigationItem key="navigationItem" title="설정" id="hgO-N6-fi9">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="ttN-YT-TAD">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="modalDismiss:" destination="Pfh-kx-oHl" id="5wk-mv-P78"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7e8-K0-8r0">
+                        <barButtonItem key="rightBarButtonItem" title="확인" id="7e8-K0-8r0">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -709,7 +709,7 @@
             </objects>
             <point key="canvasLocation" x="-1048" y="-1440"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="eBM-QV-mk1">
             <objects>
                 <tableViewController id="0x7-p6-g13" customClass="HomeTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -789,8 +789,8 @@
                             <outlet property="delegate" destination="0x7-p6-g13" id="dAi-3e-43h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home" id="Gjb-SQ-ytz">
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="1nc-OI-A5N">
+                    <navigationItem key="navigationItem" title="홈" id="Gjb-SQ-ytz">
+                        <barButtonItem key="rightBarButtonItem" title="설정" id="1nc-OI-A5N">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Nh8-As-kXB" kind="showDetail" id="zzh-uq-3qH"/>
@@ -802,11 +802,11 @@
             </objects>
             <point key="canvasLocation" x="-114.375" y="-1440.8450704225352"/>
         </scene>
-        <!--TimeLine-->
+        <!--기록-->
         <scene sceneID="foF-i7-AcO">
             <objects>
                 <navigationController id="s7W-WK-RjV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TimeLine" image="TimeLine" id="IkH-U2-Y6S"/>
+                    <tabBarItem key="tabBarItem" title="기록" image="TimeLine" id="IkH-U2-Y6S"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Beg-qt-96i">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
