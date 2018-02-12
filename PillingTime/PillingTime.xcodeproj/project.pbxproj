@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD99E9A20318A9A00C8F96D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD99E9920318A9A00C8F96D /* NavigationController.swift */; };
 		F41D472A200F53460000E758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D4729200F53460000E758 /* AppDelegate.swift */; };
 		F41D472C200F53460000E758 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D472B200F53460000E758 /* ViewController.swift */; };
 		F41D472F200F53460000E758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D472D200F53460000E758 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DD99E9920318A9A00C8F96D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F41D4726200F53460000E758 /* PillingTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillingTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41D4729200F53460000E758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F41D472B200F53460000E758 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				F423BA3E202C19AE000C4A8F /* ListTableViewCell.swift */,
 				F423BA40202C29A2000C4A8F /* ListTableViewController.swift */,
+				1DD99E9920318A9A00C8F96D /* NavigationController.swift */,
 			);
 			path = ListTableView;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				F423BA41202C29A2000C4A8F /* ListTableViewController.swift in Sources */,
 				F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */,
 				F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */,
+				1DD99E9A20318A9A00C8F96D /* NavigationController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
 				F441D58220305CBB00102ABF /* HeaderView.swift in Sources */,
 				F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */,
