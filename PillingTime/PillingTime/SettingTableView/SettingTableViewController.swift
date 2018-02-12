@@ -20,15 +20,6 @@ class SettingTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-<<<<<<< HEAD
-=======
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
->>>>>>> 6a8b51f450dbbed841bf74a1ea07b7112bdb6b44
     }
 
     override func didReceiveMemoryWarning() {

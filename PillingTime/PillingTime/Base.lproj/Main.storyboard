@@ -163,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="-114.375" y="-627.46478873239437"/>
         </scene>
-        <!--+-->
+        <!--추가-->
         <scene sceneID="AhZ-5d-1cd">
             <objects>
                 <tableViewController id="Wlo-B8-Eds" customClass="AddTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -502,7 +502,7 @@
                             <outlet property="delegate" destination="Wlo-B8-Eds" id="9Q4-DB-1lW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="+" id="5IN-k9-1rX">
+                    <navigationItem key="navigationItem" title="추가" id="5IN-k9-1rX">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="bMG-s2-y1P">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
