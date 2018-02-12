@@ -6,6 +6,7 @@ class ListTableViewController: UITableViewController {
     @IBAction func tabButton(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
+            
         } else {
             sender.isSelected = true
         }
@@ -40,16 +41,44 @@ class ListTableViewController: UITableViewController {
         cell.listImageView.image = UIImage(named: PillList[indexPath.row].iconName)
         cell.titleLabel.text = PillList[indexPath.row].title
         cell.memoLabel.text = PillList[indexPath.row].memo
+        cell.titleLabel.tag = indexPath.section
+        cell.memoLabel.tag = indexPath.row
         
+        for item in PillList[indexPath.row].meridianCheckList {
+            switch item.key {
+            case .아침:
+                if item.value == .check {
+                    cell.morningButton.isSelected = true
+                } else {
+                    cell.morningButton.isSelected = false
+                }
+            case .점심:
+                if item.value == .check {
+                    cell.lunchButton.isSelected = true
+                } else {
+                    cell.lunchButton.isSelected = false
+                }
+            case .저녁:
+                if item.value == .check {
+                    cell.dinnerButton.isSelected = true
+                } else {
+                    cell.dinnerButton.isSelected = false
+                }
+            }
+        }
         return cell
     }
+    
+    
+    
+    
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
-        
     }
+    
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {

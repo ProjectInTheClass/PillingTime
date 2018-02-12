@@ -27,12 +27,6 @@ class HomeTableViewController: UITableViewController {
                         ExpandableSection(meridian: .저녁, isExpanded: false, Pills: [])]
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,18 +76,42 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
         
         cell.homeImageView.image = UIImage(named: classified[indexPath.section].Pills[indexPath.row].iconName)
         cell.titleLabel.text = classified[indexPath.section].Pills[indexPath.row].title
         cell.memoLabel.text = classified[indexPath.section].Pills[indexPath.row].memo
-        cell.checkButton.tag = indexPath.section
+        cell.timeLabel.text = classified[indexPath.section].Pills[indexPath.row].detail
+        cell.checkImage.tag = indexPath.section
+        cell.homeImageView.tag = indexPath.row
+        
+        cell.addGestureRecognizer(tap)
         
         return cell
     }
     
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func cellTapped(sender: UITapGestureRecognizer) {
+        let cell = sender.view as! HomeTableViewCell
+        let section = cell.checkImage.tag
+        let row = cell.homeImageView.tag
         
+        var index: Meridian
+        switch  section{
+        case 0:
+            index = .아침
+        case 1:
+            index = .점심
+        default:
+            index = .저녁
+        }
+        
+        if classified[section].Pills[row].meridianCheckList[index] == .uncheck {
+            classified[section].Pills[row].meridianCheckList[index] = .check
+            cell.checkImage.image = UIImage(named: "Checked")
+        } else {
+            classified[section].Pills[row].meridianCheckList[index] = .uncheck
+            cell.checkImage.image = UIImage(named: "Unchecked Light")
+        }
     }
     
     
@@ -149,5 +167,4 @@ class HomeTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }
-
 }

@@ -14,8 +14,8 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var homeImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var memoLabel: UILabel!
-    @IBOutlet weak var checkButton: UIButton!
-    
+    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
