@@ -19,6 +19,7 @@
 		F423BA45202C2D32000C4A8F /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */; };
 		F42705B02020E28E00E4179C /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42705AF2020E28E00E4179C /* Pill.swift */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
+		F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		F42705AF2020E28E00E4179C /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
+		F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				F423BA42202C2CBE000C4A8F /* TimeLineTableViewCell.swift */,
 				F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */,
 				F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */,
+				F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */,
 			);
 			path = PillingTime;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				F42705B02020E28E00E4179C /* Pill.swift in Sources */,
 				F41D472C200F53460000E758 /* ViewController.swift in Sources */,
 				F423BA41202C29A2000C4A8F /* ListTableViewController.swift in Sources */,
+				F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
 				F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */,
 				F423BA43202C2CBE000C4A8F /* TimeLineTableViewCell.swift in Sources */,
