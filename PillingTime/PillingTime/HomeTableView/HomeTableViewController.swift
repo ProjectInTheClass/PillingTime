@@ -22,6 +22,8 @@ class HomeTableViewController: UITableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 62
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -95,7 +97,7 @@ class HomeTableViewController: UITableViewController {
         headerView.headerLabel.text = sectionNames[section]
         headerView.rightHeaderImageView.image = UIImage(named: "underChevron")
         headerView.headerLabel.tag = section
-       
+        
         return headerView
     }
     
