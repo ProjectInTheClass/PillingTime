@@ -22,6 +22,8 @@
 		F441D559202F51D300102ABF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D558202F51D300102ABF /* HomeTableViewController.swift */; };
 		F441D55E202FF96600102ABF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D55D202FF96600102ABF /* HomeTableViewCell.swift */; };
 		F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D56020300ED900102ABF /* ExpandableSection.swift */; };
+		F441D58220305CBB00102ABF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D58020305CBB00102ABF /* HeaderView.swift */; };
+		F441D58320305CBB00102ABF /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F441D58120305CBB00102ABF /* HeaderView.xib */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
 		F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		F441D558202F51D300102ABF /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		F441D55D202FF96600102ABF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		F441D56020300ED900102ABF /* ExpandableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSection.swift; sourceTree = "<group>"; };
+		F441D58020305CBB00102ABF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F441D58120305CBB00102ABF /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +132,8 @@
 				F441D558202F51D300102ABF /* HomeTableViewController.swift */,
 				F441D55D202FF96600102ABF /* HomeTableViewCell.swift */,
 				F441D56020300ED900102ABF /* ExpandableSection.swift */,
+				F441D58020305CBB00102ABF /* HeaderView.swift */,
+				F441D58120305CBB00102ABF /* HeaderView.xib */,
 			);
 			path = HomeTableView;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				F41D4734200F53460000E758 /* LaunchScreen.storyboard in Resources */,
 				F41D4731200F53460000E758 /* Assets.xcassets in Resources */,
 				F41D472F200F53460000E758 /* Main.storyboard in Resources */,
+				F441D58320305CBB00102ABF /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +229,7 @@
 				F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */,
 				F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
+				F441D58220305CBB00102ABF /* HeaderView.swift in Sources */,
 				F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */,
 				F423BA43202C2CBE000C4A8F /* TimeLineTableViewCell.swift in Sources */,
 				F423BA45202C2D32000C4A8F /* TimeLineTableViewController.swift in Sources */,
