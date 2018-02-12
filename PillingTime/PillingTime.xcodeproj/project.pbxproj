@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F408360F20317C9A00368B96 /* TimeLineSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408360E20317C9A00368B96 /* TimeLineSection.swift */; };
 		F41D472A200F53460000E758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D4729200F53460000E758 /* AppDelegate.swift */; };
 		F41D472C200F53460000E758 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D472B200F53460000E758 /* ViewController.swift */; };
 		F41D472F200F53460000E758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D472D200F53460000E758 /* Main.storyboard */; };
@@ -24,11 +25,14 @@
 		F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D56020300ED900102ABF /* ExpandableSection.swift */; };
 		F441D58220305CBB00102ABF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D58020305CBB00102ABF /* HeaderView.swift */; };
 		F441D58320305CBB00102ABF /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F441D58120305CBB00102ABF /* HeaderView.xib */; };
+		F4A9DDE62031ED5F00FD4A3A /* PPillList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */; };
+		F4EE36E22031B24B002A16B3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EE36E12031B24B002A16B3 /* Media.xcassets */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
 		F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F408360E20317C9A00368B96 /* TimeLineSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineSection.swift; sourceTree = "<group>"; };
 		F41D4726200F53460000E758 /* PillingTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillingTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41D4729200F53460000E758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F41D472B200F53460000E758 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		F441D56020300ED900102ABF /* ExpandableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSection.swift; sourceTree = "<group>"; };
 		F441D58020305CBB00102ABF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F441D58120305CBB00102ABF /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPillList.swift; sourceTree = "<group>"; };
+		F4EE36E12031B24B002A16B3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../Desktop/Media.xcassets; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +88,7 @@
 		F41D4728200F53460000E758 /* PillingTime */ = {
 			isa = PBXGroup;
 			children = (
+				F4A9DDE42031ED1D00FD4A3A /* Singleton */,
 				F441D55C202FE10700102ABF /* AddTableView */,
 				F441D557202F51B200102ABF /* HomeTableView */,
 				F441D556202F4B2100102ABF /* SettingTableView */,
@@ -91,6 +98,7 @@
 				F41D472B200F53460000E758 /* ViewController.swift */,
 				F41D472D200F53460000E758 /* Main.storyboard */,
 				F41D4730200F53460000E758 /* Assets.xcassets */,
+				F4EE36E12031B24B002A16B3 /* Media.xcassets */,
 				F41D4732200F53460000E758 /* LaunchScreen.storyboard */,
 				F41D4735200F53460000E758 /* Info.plist */,
 				F42705AF2020E28E00E4179C /* Pill.swift */,
@@ -112,6 +120,7 @@
 			children = (
 				F423BA42202C2CBE000C4A8F /* TimeLineTableViewCell.swift */,
 				F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */,
+				F408360E20317C9A00368B96 /* TimeLineSection.swift */,
 			);
 			path = TimeLineTableView;
 			sourceTree = "<group>";
@@ -144,6 +153,14 @@
 				F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */,
 			);
 			path = AddTableView;
+			sourceTree = "<group>";
+		};
+		F4A9DDE42031ED1D00FD4A3A /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */,
+			);
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EE36E22031B24B002A16B3 /* Media.xcassets in Resources */,
 				F41D4734200F53460000E758 /* LaunchScreen.storyboard in Resources */,
 				F41D4731200F53460000E758 /* Assets.xcassets in Resources */,
 				F41D472F200F53460000E758 /* Main.storyboard in Resources */,
@@ -229,8 +247,10 @@
 				F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */,
 				F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
+				F4A9DDE62031ED5F00FD4A3A /* PPillList.swift in Sources */,
 				F441D58220305CBB00102ABF /* HeaderView.swift in Sources */,
 				F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */,
+				F408360F20317C9A00368B96 /* TimeLineSection.swift in Sources */,
 				F423BA43202C2CBE000C4A8F /* TimeLineTableViewCell.swift in Sources */,
 				F423BA45202C2D32000C4A8F /* TimeLineTableViewController.swift in Sources */,
 				F423BA3F202C19AE000C4A8F /* ListTableViewCell.swift in Sources */,
@@ -370,6 +390,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 682454CVT8;
 				INFOPLIST_FILE = PillingTime/Info.plist;
@@ -386,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 682454CVT8;
 				INFOPLIST_FILE = PillingTime/Info.plist;

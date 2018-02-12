@@ -8,7 +8,12 @@ class TimeLineTableViewCell: UITableViewCell {
     @IBOutlet weak var morningButton: UIButton!
     @IBOutlet weak var lunchButton: UIButton!
     @IBOutlet weak var dinnerButton: UIButton!
-
+    @IBOutlet weak var morningImageView: UIImageView!
+    @IBOutlet weak var lunchImageView: UIImageView!
+    @IBOutlet weak var dinnerImageView: UIImageView!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

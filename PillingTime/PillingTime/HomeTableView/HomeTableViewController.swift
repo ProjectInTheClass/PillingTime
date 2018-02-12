@@ -4,12 +4,11 @@ import UIKit
 var heightOfHeader : CGFloat = 50
 
 var PillList: [Pill] = []
-var updateCheck = false
+var classified: [ExpandableSection] = []
+var HomeUpdateCheck = false
+var TimeLineUpdateCheck = false
+
 class HomeTableViewController: UITableViewController {
-    
-    var classified: [ExpandableSection] = [ ExpandableSection(meridian: .아침, isExpanded: false, Pills: []),
-                                            ExpandableSection(meridian: .점심, isExpanded: false, Pills: []),
-                                            ExpandableSection(meridian: .저녁, isExpanded: false, Pills: [])]
     
     let sectionImageNames = ["sunrise", "sun", "misty-day"]
     let sectionNames = ["아침", "점심", "저녁"]
@@ -22,37 +21,36 @@ class HomeTableViewController: UITableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 62
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        classified =  [ ExpandableSection(meridian: .아침, isExpanded: false, Pills: []),
+                        ExpandableSection(meridian: .점심, isExpanded: false, Pills: []),
+                        ExpandableSection(meridian: .저녁, isExpanded: false, Pills: [])]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if PillList.count != 0 && updateCheck == true {
+        if PillList.count != 0 && HomeUpdateCheck == true {
             
             for item in PillList {
                 for key in item.meridianCheckList.keys {
                     if key == .아침 {
-                        if classified[0].Pills.index(where: { $0.title == item.title}) == nil {
+                        if classified[0].Pills.index(where: { $0 == item }) == nil {
                             classified[0].Pills.append(item)
                         }
                     } else if key == .점심 {
-                        if classified[1].Pills.index(where: { $0.title == item.title}) == nil {
+                        if classified[1].Pills.index(where: { $0 == item }) == nil {
                             classified[1].Pills.append(item)
                         }
                     } else if key == .저녁{
-                        if classified[2].Pills.index(where: { $0.title == item.title}) == nil {
+                        if classified[2].Pills.index(where: { $0 == item }) == nil {
                             classified[2].Pills.append(item)
                         }
                     }
                 }
             }
-            updateCheck = false
+            HomeUpdateCheck = false
         }
         
         tableView.reloadData()
@@ -81,8 +79,14 @@ class HomeTableViewController: UITableViewController {
         cell.homeImageView.image = UIImage(named: classified[indexPath.section].Pills[indexPath.row].iconName)
         cell.titleLabel.text = classified[indexPath.section].Pills[indexPath.row].title
         cell.memoLabel.text = classified[indexPath.section].Pills[indexPath.row].memo
+        cell.checkButton.tag = indexPath.section
         
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     
@@ -95,7 +99,6 @@ class HomeTableViewController: UITableViewController {
         headerView.headerLabel.text = sectionNames[section]
         headerView.rightHeaderImageView.image = UIImage(named: "underChevron")
         headerView.headerLabel.tag = section
-       
         return headerView
     }
     
@@ -130,6 +133,13 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heightOfHeader
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            classified[indexPath.section].Pills.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        }
     }
 
 }

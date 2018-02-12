@@ -26,9 +26,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
     }
     
     @IBAction func tabTimeButton(_ sender: UIButton) {
-        guard let title = sender.currentTitle, let time = Meridian(rawValue: title) else {
-            return
-        }
+        guard let title = sender.currentTitle, let time = Meridian(rawValue: title) else { return }
         
         if sender.isSelected == true {
             print("Meridian 삭제")
@@ -37,7 +35,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
             
         } else {
             print("Meridian 추가")
-            timeList[time] = .check
+            timeList[time] = .uncheck
             sender.isSelected = true
         }
     }
@@ -54,12 +52,20 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
             && [Meridian](timeList.keys).count != 0{
             let pill = Pill(iconName: iconName, title: titleField.text!,
                             memo: memoTextView.text, meridianCheckList: timeList,
-                            time: PickerSelectedValue)
+                            detail: PickerSelectedValue)
+            
+            // 현재 날짜 가져와 pill.time에 설정
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let stringDate = dateFormatter.string(from: date)
+            pill.time = stringDate
+            
+            print(pill.time)
             
             PillList.append(pill)
-            updateCheck = true
-            print("PillList 개수 :" + "\(String(describing: PillList.count))")
-            print("PillList에 추가")
+            HomeUpdateCheck = true
+            TimeLineUpdateCheck = true
             self.dismiss(animated: true, completion: nil)
             
         } else {

@@ -40,7 +40,6 @@ class ListTableViewController: UITableViewController {
         cell.titleLabel.text = PillList[indexPath.row].title
         cell.memoLabel.text = PillList[indexPath.row].memo
         
-        
         return cell
     }
     
@@ -49,5 +48,20 @@ class ListTableViewController: UITableViewController {
         
         tableView.reloadData()
         
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            var i = 0
+            for item in classified {
+                if let index = item.Pills.index(where: { $0 == PillList[indexPath.row]}){
+                    classified[i].Pills.remove(at: index)
+                }
+                i += 1
+            }
+            
+            PillList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        }
     }
 }

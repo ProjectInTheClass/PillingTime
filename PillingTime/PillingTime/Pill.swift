@@ -7,22 +7,22 @@ class Pill {
     var title = ""
     var memo = ""
     var meridianCheckList: [Meridian: Check]
+    var detail = ""
     var time = ""
     
-//    init(imageName: String, title: String, memo: String, meridianList: [Meridian], subTime: String) {
-//        self.imageName = imageName
-//        self.title = title
-//        self.memo = memo
-//        self.meridianList = meridianList
-//        self.subTime = subTime
-//    }
     
-    init(iconName: String, title: String, memo: String, meridianCheckList: [Meridian: Check], time: String) {
+    init(iconName: String, title: String, memo: String, meridianCheckList: [Meridian: Check], detail: String) {
         self.iconName = iconName
         self.title = title
         self.memo = memo
         self.meridianCheckList = meridianCheckList
-        self.time = time
+        self.detail = detail
+    }
+}
+
+extension Pill: Equatable {
+    static func ==(lhs: Pill, rhs: Pill) -> Bool {
+        return lhs.title == rhs.title
     }
 }
 
