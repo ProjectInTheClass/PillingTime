@@ -41,6 +41,7 @@ class ListTableViewController: UITableViewController {
         cell.titleLabel.text = PillList[indexPath.row].title
         cell.memoLabel.text = PillList[indexPath.row].memo
         
+        
         return cell
     }
         
