@@ -22,10 +22,20 @@ class HomeTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 62
         
+<<<<<<< HEAD
         classified =  [ ExpandableSection(meridian: .아침, isExpanded: false, Pills: []),
                         ExpandableSection(meridian: .점심, isExpanded: false, Pills: []),
                         ExpandableSection(meridian: .저녁, isExpanded: false, Pills: [])]
         
+=======
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+>>>>>>> 6a8b51f450dbbed841bf74a1ea07b7112bdb6b44
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +109,10 @@ class HomeTableViewController: UITableViewController {
         headerView.headerLabel.text = sectionNames[section]
         headerView.rightHeaderImageView.image = UIImage(named: "underChevron")
         headerView.headerLabel.tag = section
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 6a8b51f450dbbed841bf74a1ea07b7112bdb6b44
         return headerView
     }
     

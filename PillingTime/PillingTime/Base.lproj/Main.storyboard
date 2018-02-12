@@ -12,11 +12,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List-->
+        <!--목록-->
         <scene sceneID="mNq-Gv-Ta5">
             <objects>
                 <navigationController id="zlb-mL-FtH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="List" id="VhB-4b-c2j"/>
+                    <tabBarItem key="tabBarItem" title="목록" image="List" id="VhB-4b-c2j"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Iw-Oy-NSN">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -63,7 +63,9 @@
                                                 <constraint firstAttribute="width" secondItem="Gz8-w0-KDa" secondAttribute="height" multiplier="11:10" id="gXc-mI-2sf"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <state key="normal" title="아침"/>
+                                            <state key="normal" title="아침">
+                                                <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="tabButton:" destination="SDR-K0-pIQ" eventType="touchUpInside" id="c7E-Tj-eze"/>
                                             </connections>
@@ -74,7 +76,9 @@
                                                 <constraint firstAttribute="width" secondItem="WD0-Bf-hS3" secondAttribute="height" multiplier="11:10" id="RqC-be-ISd"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <state key="normal" title="점심"/>
+                                            <state key="normal" title="점심">
+                                                <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="tabButton:" destination="SDR-K0-pIQ" eventType="touchUpInside" id="Mx7-Sp-fGg"/>
                                             </connections>
@@ -85,7 +89,9 @@
                                                 <constraint firstAttribute="width" secondItem="rRe-Dk-VlZ" secondAttribute="height" multiplier="11:10" id="pje-6A-gmJ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <state key="normal" title="저녁"/>
+                                            <state key="normal" title="저녁">
+                                                <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="tabButton:" destination="SDR-K0-pIQ" eventType="touchUpInside" id="d6h-Fs-w3l"/>
                                             </connections>
@@ -96,6 +102,11 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvO-9r-ZDl">
+                                            <rect key="frame" x="16" y="70" width="287" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.792156862745098" green="0.85882352941176465" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Gz8-w0-KDa" firstAttribute="top" secondItem="9e1-jb-ShL" secondAttribute="topMargin" constant="14" id="22F-d4-eFe"/>
@@ -137,8 +148,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="목록" id="eGM-Yg-yrh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="BSw-f1-Pxw"/>
+                        <barButtonItem key="leftBarButtonItem" title="편집" id="BSw-f1-Pxw">
+                            <color key="tintColor" red="0.41568627450980389" green="0.68627450980392157" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WMg-eF-Je2">
+                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="POu-Wg-uAT" kind="presentation" id="Di3-Jx-mmp"/>
                             </connections>
@@ -149,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="-114.375" y="-627.46478873239437"/>
         </scene>
-        <!--Add-->
+        <!--+-->
         <scene sceneID="AhZ-5d-1cd">
             <objects>
                 <tableViewController id="Wlo-B8-Eds" customClass="AddTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -369,7 +383,9 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="UfW-f9-ceV"/>
                                                                 <constraint firstAttribute="height" constant="30" id="dNW-MR-bIp"/>
                                                             </constraints>
-                                                            <state key="normal" title="아침"/>
+                                                            <state key="normal" title="아침">
+                                                                <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
                                                             <state key="disabled" title="아침">
                                                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -384,7 +400,9 @@
                                                                 <constraint firstAttribute="height" constant="30" id="EMt-K1-qAx"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="MJY-22-YFQ"/>
                                                             </constraints>
-                                                            <state key="normal" title="점심"/>
+                                                            <state key="normal" title="점심">
+                                                                <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
                                                             <state key="disabled" title="점심">
                                                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -399,7 +417,9 @@
                                                                 <constraint firstAttribute="height" constant="30" id="EwT-kb-2FH"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="kXe-3o-km6"/>
                                                             </constraints>
-                                                            <state key="normal" title="저녁"/>
+                                                            <state key="normal" title="저녁">
+                                                                <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
                                                             <state key="disabled" title="저녁">
                                                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -421,15 +441,18 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="185" id="sfO-c9-2iX">
-                                        <rect key="frame" x="0.0" y="312.5" width="320" height="185"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="sfO-c9-2iX">
+                                        <rect key="frame" x="0.0" y="312.5" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sfO-c9-2iX" id="aJU-KB-RS8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="184.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-zK-cUx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="184.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="108" id="yXi-Jb-m2e"/>
+                                                    </constraints>
                                                     <connections>
                                                         <outlet property="dataSource" destination="Wlo-B8-Eds" id="igw-uV-NX6"/>
                                                         <outlet property="delegate" destination="Wlo-B8-Eds" id="mR3-dQ-GGv"/>
@@ -437,12 +460,9 @@
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="F0b-zK-cUx" secondAttribute="bottom" id="6Ad-l7-VVy"/>
-                                                <constraint firstAttribute="trailing" secondItem="F0b-zK-cUx" secondAttribute="trailing" id="BMn-bN-Z5i"/>
-                                                <constraint firstItem="F0b-zK-cUx" firstAttribute="centerX" secondItem="aJU-KB-RS8" secondAttribute="centerX" id="Ddi-tm-uDt"/>
-                                                <constraint firstItem="F0b-zK-cUx" firstAttribute="top" secondItem="aJU-KB-RS8" secondAttribute="top" id="doK-ue-YKa"/>
-                                                <constraint firstItem="F0b-zK-cUx" firstAttribute="centerY" secondItem="aJU-KB-RS8" secondAttribute="centerY" id="mjz-0y-ic1"/>
-                                                <constraint firstItem="F0b-zK-cUx" firstAttribute="leading" secondItem="aJU-KB-RS8" secondAttribute="leading" id="qsZ-VI-4wH"/>
+                                                <constraint firstItem="F0b-zK-cUx" firstAttribute="top" secondItem="aJU-KB-RS8" secondAttribute="top" id="MXq-gS-A2S"/>
+                                                <constraint firstItem="F0b-zK-cUx" firstAttribute="leading" secondItem="aJU-KB-RS8" secondAttribute="leading" id="OcP-fk-18s"/>
+                                                <constraint firstAttribute="trailing" secondItem="F0b-zK-cUx" secondAttribute="trailing" id="RZe-PB-9rw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -451,7 +471,7 @@
                             <tableViewSection headerTitle="메모" id="aPw-4n-z4h">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="FVM-l0-chy">
-                                        <rect key="frame" x="0.0" y="553.5" width="320" height="116"/>
+                                        <rect key="frame" x="0.0" y="476.5" width="320" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FVM-l0-chy" id="wkP-rZ-8c7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
@@ -482,13 +502,15 @@
                             <outlet property="delegate" destination="Wlo-B8-Eds" id="9Q4-DB-1lW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add" id="5IN-k9-1rX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bMG-s2-y1P">
+                    <navigationItem key="navigationItem" title="+" id="5IN-k9-1rX">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="bMG-s2-y1P">
+                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="modalDismiss:" destination="Wlo-B8-Eds" id="0nN-JU-hK1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a2s-Wm-UPJ">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="a2s-Wm-UPJ">
+                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tabSave:" destination="Wlo-B8-Eds" id="FE5-JL-xhX"/>
                             </connections>
@@ -514,7 +536,7 @@
             </objects>
             <point key="canvasLocation" x="1758.75" y="-627.46478873239437"/>
         </scene>
-        <!--Setting-->
+        <!--설정-->
         <scene sceneID="nre-X3-d10">
             <objects>
                 <tableViewController id="Pfh-kx-oHl" customClass="SettingTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -542,7 +564,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="눌러서 설정" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm2-c6-vOL">
                                                     <rect key="frame" x="144" y="0.0" width="144" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -607,13 +629,16 @@
                             <outlet property="delegate" destination="Pfh-kx-oHl" id="scj-YJ-RNu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="hgO-N6-fi9">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ttN-YT-TAD">
+                    <navigationItem key="navigationItem" title="설정" id="hgO-N6-fi9">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="ttN-YT-TAD">
+                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="modalDismiss:" destination="Pfh-kx-oHl" id="5wk-mv-P78"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7e8-K0-8r0"/>
+                        <barButtonItem key="rightBarButtonItem" title="확인" id="7e8-K0-8r0">
+                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40g-Jf-sPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -669,7 +694,7 @@
             </objects>
             <point key="canvasLocation" x="-1048" y="-1440"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="eBM-QV-mk1">
             <objects>
                 <tableViewController id="0x7-p6-g13" customClass="HomeTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -699,7 +724,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="AMe-zY-lXb" secondAttribute="height" multiplier="26:15" id="QFj-BN-h5k"/>
                                             </constraints>
-                                            <state key="normal" title="복용확인"/>
+                                            <state key="normal" title="복용확인">
+                                                <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <state key="disabled" title="복용함">
                                                 <color key="titleColor" red="0.83137254901960778" green="0.87450980392156863" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
@@ -747,8 +774,9 @@
                             <outlet property="delegate" destination="0x7-p6-g13" id="dAi-3e-43h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home" id="Gjb-SQ-ytz">
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="1nc-OI-A5N">
+                    <navigationItem key="navigationItem" title="홈" id="Gjb-SQ-ytz">
+                        <barButtonItem key="rightBarButtonItem" title="설정" id="1nc-OI-A5N">
+                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Nh8-As-kXB" kind="showDetail" id="zzh-uq-3qH"/>
                             </connections>
@@ -759,11 +787,11 @@
             </objects>
             <point key="canvasLocation" x="-114.375" y="-1440.8450704225352"/>
         </scene>
-        <!--TimeLine-->
+        <!--기록-->
         <scene sceneID="foF-i7-AcO">
             <objects>
                 <navigationController id="s7W-WK-RjV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TimeLine" image="TimeLine" id="IkH-U2-Y6S"/>
+                    <tabBarItem key="tabBarItem" title="기록" image="TimeLine" id="IkH-U2-Y6S"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Beg-qt-96i">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -909,7 +937,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w74-Nf-P4j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="cgD-UZ-9Ae" kind="relationship" relationship="viewControllers" id="IE2-HV-gok"/>
