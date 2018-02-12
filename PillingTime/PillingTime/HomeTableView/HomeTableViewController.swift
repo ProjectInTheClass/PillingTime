@@ -22,23 +22,18 @@ class HomeTableViewController: UITableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 62
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Home PillList 개수 :" + "\(String(describing: PillList.count))")
-        
-        var indexPaths0 = [IndexPath]()
-        var indexPaths1 = [IndexPath]()
-        var indexPaths2 = [IndexPath]()
-        
         
         if PillList.count != 0 && updateCheck == true {
-            if classified[0].isExpanded == false {
-                classified[0].Pills.removeAll()
-                classified[1].Pills.removeAll()
-                classified[2].Pills.removeAll()
-            }
             
             for item in PillList {
                 for key in item.meridianCheckList.keys {
@@ -46,67 +41,36 @@ class HomeTableViewController: UITableViewController {
                         if classified[0].Pills.index(where: { $0.title == item.title}) == nil {
                             classified[0].Pills.append(item)
                         }
-                        if classified[0].isExpanded == true {
-                            let indexPath = IndexPath(row: classified[0].Pills.count - 1, section: 1)
-                            indexPaths0.append(indexPath)
-                            tableView.beginUpdates()
-                            tableView.insertRows(at: indexPaths0, with: UITableViewRowAnimation.fade)
-                            tableView.endUpdates()
-                        }
                     } else if key == .점심 {
                         if classified[1].Pills.index(where: { $0.title == item.title}) == nil {
                             classified[1].Pills.append(item)
-                        }
-                        if classified[1].isExpanded == true{
-                            let indexPath = IndexPath(row: classified[1].Pills.count - 1, section: 2)
-                            indexPaths1.append(indexPath)
-                            tableView.beginUpdates()
-                            tableView.insertRows(at: indexPaths1, with: UITableViewRowAnimation.fade)
-                            tableView.endUpdates()
                         }
                     } else if key == .저녁{
                         if classified[2].Pills.index(where: { $0.title == item.title}) == nil {
                             classified[2].Pills.append(item)
                         }
-                        if classified[2].isExpanded == true{
-                            let indexPath = IndexPath(row: classified[2].Pills.count - 1, section: 3)
-                            indexPaths2.append(indexPath)
-                            tableView.beginUpdates()
-                            tableView.insertRows(at: indexPaths2, with: UITableViewRowAnimation.fade)
-                            tableView.endUpdates()
-                        }
                     }
-                    print( " classified[0].Pills?.count : \(String(describing: classified[0].Pills.count - 1))")
-                    print( " classified[1].Pills?.count : \(String(describing: classified[1].Pills.count - 1))")
-                    print( " classified[2].Pills?.count : \(String(describing: classified[2].Pills.count - 1))")
                 }
             }
             updateCheck = false
-            print("PillList 분류")
         }
         
-        print("화면 업데이트")
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return classified.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if classified[section].isExpanded == false {
             return 0
         }
         
-        print("행의 개수 : \(classified[section].Pills.count)")
         return classified[section].Pills.count
     }
 
@@ -165,7 +129,6 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-
         return heightOfHeader
     }
 
