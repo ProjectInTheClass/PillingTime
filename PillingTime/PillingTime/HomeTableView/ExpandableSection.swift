@@ -9,6 +9,7 @@
 import Foundation
 
 struct ExpandableSection {
+    let meridian : Meridian
     var isExpanded: Bool
     var Pills: [Pill]
 }
