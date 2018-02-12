@@ -1,20 +1,7 @@
-//
-//  AddTableViewController.swift
-//  PillingTime
-//
-//  Created by Enirobot on 2018. 2. 8..
-//  Copyright © 2018년 Enirobot. All rights reserved.
-//
 
 import UIKit
 
-class AddTableViewController: UITableViewController {
-    
-    @IBAction func modalDismiss(_ sender: Any) {
-        
-        self.dismiss(animated: true, completion: nil)
-        
-    }
+class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +17,19 @@ class AddTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

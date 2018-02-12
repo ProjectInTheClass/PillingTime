@@ -12,12 +12,14 @@
 		F41D472F200F53460000E758 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D472D200F53460000E758 /* Main.storyboard */; };
 		F41D4731200F53460000E758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41D4730200F53460000E758 /* Assets.xcassets */; };
 		F41D4734200F53460000E758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41D4732200F53460000E758 /* LaunchScreen.storyboard */; };
-		F423BA1F202BF411000C4A8F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F423BA1E202BF411000C4A8F /* HomePageViewController.swift */; };
 		F423BA3F202C19AE000C4A8F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F423BA3E202C19AE000C4A8F /* ListTableViewCell.swift */; };
 		F423BA41202C29A2000C4A8F /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F423BA40202C29A2000C4A8F /* ListTableViewController.swift */; };
 		F423BA43202C2CBE000C4A8F /* TimeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F423BA42202C2CBE000C4A8F /* TimeLineTableViewCell.swift */; };
 		F423BA45202C2D32000C4A8F /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */; };
 		F42705B02020E28E00E4179C /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42705AF2020E28E00E4179C /* Pill.swift */; };
+		F43C9D2B202D6D3500B6DBC5 /* SettingTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9D2A202D6D3500B6DBC5 /* SettingTimeTableViewCell.swift */; };
+		F43C9D2D202D6DBE00B6DBC5 /* SettingAlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9D2C202D6DBE00B6DBC5 /* SettingAlarmTableViewCell.swift */; };
+		F441D559202F51D300102ABF /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D558202F51D300102ABF /* HomeTableViewController.swift */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
 		F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,12 +32,14 @@
 		F41D4730200F53460000E758 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F41D4733200F53460000E758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F41D4735200F53460000E758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F423BA1E202BF411000C4A8F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		F423BA3E202C19AE000C4A8F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		F423BA40202C29A2000C4A8F /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		F423BA42202C2CBE000C4A8F /* TimeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewCell.swift; sourceTree = "<group>"; };
 		F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		F42705AF2020E28E00E4179C /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		F43C9D2A202D6D3500B6DBC5 /* SettingTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTimeTableViewCell.swift; sourceTree = "<group>"; };
+		F43C9D2C202D6DBE00B6DBC5 /* SettingAlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlarmTableViewCell.swift; sourceTree = "<group>"; };
+		F441D558202F51D300102ABF /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +74,11 @@
 		F41D4728200F53460000E758 /* PillingTime */ = {
 			isa = PBXGroup;
 			children = (
+				F441D55C202FE10700102ABF /* AddTableView */,
+				F441D557202F51B200102ABF /* HomeTableView */,
+				F441D556202F4B2100102ABF /* SettingTableView */,
+				F441D555202F4AD300102ABF /* TimeLineTableView */,
+				F441D554202F4AC400102ABF /* ListTableView */,
 				F41D4729200F53460000E758 /* AppDelegate.swift */,
 				F41D472B200F53460000E758 /* ViewController.swift */,
 				F41D472D200F53460000E758 /* Main.storyboard */,
@@ -77,15 +86,52 @@
 				F41D4732200F53460000E758 /* LaunchScreen.storyboard */,
 				F41D4735200F53460000E758 /* Info.plist */,
 				F42705AF2020E28E00E4179C /* Pill.swift */,
-				F423BA1E202BF411000C4A8F /* HomePageViewController.swift */,
-				F423BA3E202C19AE000C4A8F /* ListTableViewCell.swift */,
-				F423BA40202C29A2000C4A8F /* ListTableViewController.swift */,
-				F423BA42202C2CBE000C4A8F /* TimeLineTableViewCell.swift */,
-				F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */,
-				F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */,
-				F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */,
 			);
 			path = PillingTime;
+			sourceTree = "<group>";
+		};
+		F441D554202F4AC400102ABF /* ListTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F423BA3E202C19AE000C4A8F /* ListTableViewCell.swift */,
+				F423BA40202C29A2000C4A8F /* ListTableViewController.swift */,
+			);
+			path = ListTableView;
+			sourceTree = "<group>";
+		};
+		F441D555202F4AD300102ABF /* TimeLineTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F423BA42202C2CBE000C4A8F /* TimeLineTableViewCell.swift */,
+				F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */,
+			);
+			path = TimeLineTableView;
+			sourceTree = "<group>";
+		};
+		F441D556202F4B2100102ABF /* SettingTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */,
+				F43C9D2A202D6D3500B6DBC5 /* SettingTimeTableViewCell.swift */,
+				F43C9D2C202D6DBE00B6DBC5 /* SettingAlarmTableViewCell.swift */,
+			);
+			path = SettingTableView;
+			sourceTree = "<group>";
+		};
+		F441D557202F51B200102ABF /* HomeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F441D558202F51D300102ABF /* HomeTableViewController.swift */,
+			);
+			path = HomeTableView;
+			sourceTree = "<group>";
+		};
+		F441D55C202FE10700102ABF /* AddTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */,
+			);
+			path = AddTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +206,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F423BA1F202BF411000C4A8F /* HomePageViewController.swift in Sources */,
+				F441D559202F51D300102ABF /* HomeTableViewController.swift in Sources */,
+				F43C9D2B202D6D3500B6DBC5 /* SettingTimeTableViewCell.swift in Sources */,
 				F42705B02020E28E00E4179C /* Pill.swift in Sources */,
 				F41D472C200F53460000E758 /* ViewController.swift in Sources */,
+				F43C9D2D202D6DBE00B6DBC5 /* SettingAlarmTableViewCell.swift in Sources */,
 				F423BA41202C29A2000C4A8F /* ListTableViewController.swift in Sources */,
 				F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,

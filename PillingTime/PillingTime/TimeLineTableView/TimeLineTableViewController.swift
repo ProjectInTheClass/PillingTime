@@ -1,10 +1,3 @@
-//
-//  TimeLineTableViewController.swift
-//  PillingTime
-//
-//  Created by Enirobot on 2018. 2. 8..
-//  Copyright © 2018년 Enirobot. All rights reserved.
-//
 
 import UIKit
 
