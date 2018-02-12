@@ -1,79 +1,57 @@
 
 import Foundation
 
-let UNCHECK = 0
-let CHECK = 1
-
-
 class Pill {
     
+    var imageName = ""
     var title = ""
     var memo = ""
-    var alarms: [AlarmTable]? = nil
+    var meridianList: [Meridian]
+    var subTime = ""
+    var checkList: [Meridian: Check]?
     
-    init(title: String, memo: String) {
+    init(imageName: String, title: String, memo: String, meridianList: [Meridian], subTime: String) {
+        self.imageName = imageName
         self.title = title
         self.memo = memo
+        self.meridianList = meridianList
+        self.subTime = subTime
     }
     
 }
 
-class AlarmTable {
-    var alarm : Alarm?
-    var days : [Days]?
-    var Confirm = UNCHECK
-    
-    init(alarm: Alarm, days: [Days]) {
-        self.alarm = alarm
-        self.days = days
-    }
-    
-}
 
-class Alarm {
-    var year = 0
-    var month = 0
-    var day = 0
-    var hour = 0
-    var minute = 0
-    var merifian : Meridian?
-    
-    init(hour: Int, minute: Int, merifian: Meridian) {
-        self.hour = hour
-        self.minute = minute
-        self.merifian = merifian
-    }
-    
-}
+
+
 
 enum Meridian {
-    case 오전
-    case 오후
+    case 아침
+    case 점심
+    case 저녁
 }
 
-enum Days {
-    case 월
-    case 화
-    case 수
-    case 목
-    case 금
-    case 토
-    case 일
+enum Check {
+    case check
+    case uncheck
 }
 
+enum subTime {
+    case 식후1시간
+    case 식후30분
+    case 식전30분
+    case 식전1시간
+}
 
-enum ToDoSectionType {
-    case image
-    case title
+enum AddPageSectionType {
+    case imageAndTitle
+    case timeSetting
     case memo
-    case alarmAdd
-    //case alarmTables([AlarmTable])
 }
 
 
-enum SectionType {
-    case Information
-    case Alarm
+enum SettingPageSectionType {
+    case AlarmSet
+    case AlarmStyle
 }
 
 

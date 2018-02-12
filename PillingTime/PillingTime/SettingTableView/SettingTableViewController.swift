@@ -63,6 +63,8 @@ class SettingTableViewController: UITableViewController {
         }
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
@@ -124,6 +126,10 @@ class SettingTableViewController: UITableViewController {
             }
         }
         return 40
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionsName[section]
     }
 
 }
