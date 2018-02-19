@@ -26,7 +26,6 @@
 		F441D58220305CBB00102ABF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D58020305CBB00102ABF /* HeaderView.swift */; };
 		F441D58320305CBB00102ABF /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F441D58120305CBB00102ABF /* HeaderView.xib */; };
 		F4A9DDE62031ED5F00FD4A3A /* PPillList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */; };
-		F4EE36E22031B24B002A16B3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EE36E12031B24B002A16B3 /* Media.xcassets */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
 		F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +52,6 @@
 		F441D58020305CBB00102ABF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F441D58120305CBB00102ABF /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPillList.swift; sourceTree = "<group>"; };
-		F4EE36E12031B24B002A16B3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../Desktop/Media.xcassets; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +96,6 @@
 				F41D472B200F53460000E758 /* ViewController.swift */,
 				F41D472D200F53460000E758 /* Main.storyboard */,
 				F41D4730200F53460000E758 /* Assets.xcassets */,
-				F4EE36E12031B24B002A16B3 /* Media.xcassets */,
 				F41D4732200F53460000E758 /* LaunchScreen.storyboard */,
 				F41D4735200F53460000E758 /* Info.plist */,
 				F42705AF2020E28E00E4179C /* Pill.swift */,
@@ -222,7 +219,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4EE36E22031B24B002A16B3 /* Media.xcassets in Resources */,
 				F41D4734200F53460000E758 /* LaunchScreen.storyboard in Resources */,
 				F41D4731200F53460000E758 /* Assets.xcassets in Resources */,
 				F41D472F200F53460000E758 /* Main.storyboard in Resources */,
@@ -394,7 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 682454CVT8;
 				INFOPLIST_FILE = PillingTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = E.PillingTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,7 +407,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 682454CVT8;
 				INFOPLIST_FILE = PillingTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = E.PillingTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
