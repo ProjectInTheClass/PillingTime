@@ -95,20 +95,26 @@ class TimeLineTableViewController: UITableViewController {
             case .아침:
                 if item.value == .check {
                     cell.morningImageView.image = UIImage(named: checkImage)
-                } else {
                     cell.morningButton.isEnabled = true
+                } else {
+                    cell.morningImageView.image = UIImage(named: "")
+                    //cell.morningButton.isEnabled = true
                 }
             case .점심:
                 if item.value == .check {
                     cell.lunchImageView.image = UIImage(named: checkImage)
-                } else {
                     cell.lunchButton.isEnabled = true
+                } else {
+                    cell.lunchImageView.image = UIImage(named: "")
+                    //cell.lunchButton.isEnabled = false
                 }
             case .저녁:
                 if item.value == .check {
                     cell.dinnerImageView.image = UIImage(named: checkImage)
-                } else {
                     cell.dinnerButton.isEnabled = true
+                } else {
+                    cell.dinnerImageView.image = UIImage(named: "")
+                    //cell.dinnerButton.isEnabled = true
                 }
             }
         }
