@@ -50,6 +50,8 @@ class HomeTableViewController: UITableViewController {
             store.HomeUpdateCheck = false
         }
         
+        store.PillListTimeSync()
+        
         tableView.reloadData()
     }
 
@@ -150,6 +152,7 @@ class HomeTableViewController: UITableViewController {
             store.classified[section].Pills[row].meridianCheckList[index] = .uncheck
             cell.checkImage.image = UIImage(named: "Unchecked Light")
         }
+        store.TimeLineUpdateCheck = true
     }
     
     

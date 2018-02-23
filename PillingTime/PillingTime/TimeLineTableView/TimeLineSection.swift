@@ -10,5 +10,5 @@ import Foundation
 
 struct TimeLineSection {
     var time: String
-    var Pills: [Pill]
+    var TimeLinePills: [TimeLinePill]
 }

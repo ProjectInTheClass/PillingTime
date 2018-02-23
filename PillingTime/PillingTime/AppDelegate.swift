@@ -14,9 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataCenter.sharedInstnce.HomeUpdateCheck = true
         DataCenter.sharedInstnce.TimeLineUpdateCheck = true
         
+        DataCenter.sharedInstnce.PillListTimeSync()
+        
         UINavigationBar.appearance().barTintColor = UIColor.white
         
-        print("====================앱 시작=================")
         return true
     }
 

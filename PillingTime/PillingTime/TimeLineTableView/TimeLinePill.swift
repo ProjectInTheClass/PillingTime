@@ -16,3 +16,4 @@ struct TimeLinePill {
     var detail = ""
     var time = ""
 }
+

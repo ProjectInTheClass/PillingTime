@@ -12,20 +12,18 @@ class TimeLineTableViewCell: UITableViewCell {
     @IBOutlet weak var lunchImageView: UIImageView!
     @IBOutlet weak var dinnerImageView: UIImageView!
     
-    var pill: Pill? {
+    var TimeLinePill: TimeLinePill? {
         didSet {
-            guard let pill = pill else { return }
+            guard let TimeLinePill = TimeLinePill else { return }
             
-            self.titleLabel.text = pill.title
-            self.memoLabel.text = pill.memo
+            self.titleLabel.text = TimeLinePill.title
+            self.memoLabel.text = TimeLinePill.memo
+            
+            self.morningButton.isEnabled = false
+            self.lunchButton.isEnabled = false
+            self.dinnerButton.isEnabled = false
             
         }
-    }
-    
-    override func prepareForReuse() {
-        self.morningButton.isEnabled = false
-        self.lunchButton.isEnabled = false
-        self.dinnerButton.isEnabled = false
     }
     
     override func awakeFromNib() {

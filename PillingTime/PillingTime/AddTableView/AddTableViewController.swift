@@ -53,20 +53,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
         if iconName != ""
             && (titleField.text != nil)
             && [Meridian](timeList.keys).count != 0{
-
-            // 현재 날짜 가져와 pill.time에 설정
-            let date = Date()
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            let stringDate = dateFormatter.string(from: date)
             
             let pill = Pill(iconName: iconName, title: titleField.text!,
                             memo: memoTextView.text, meridianCheckList: timeList,
-                            detail: PickerSelectedValue, time: stringDate)
+                            detail: PickerSelectedValue)
             
-
-            
-            print(pill.time)
             
             store.PillList.append(pill)
             store.HomeUpdateCheck = true

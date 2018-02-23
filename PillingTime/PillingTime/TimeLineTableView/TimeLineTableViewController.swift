@@ -14,44 +14,12 @@ class TimeLineTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("TimeLine Table viewWillAppear 시작")
-        
-        if store.PillList.count != 0 && store.TimeLineUpdateCheck == true {
-            print("PillList.count != 0 && TimeLineUpdateCheck == true")
-            
-            let date = Date()
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            let stringDate = dateFormatter.string(from: date)
-            
-            let history = store.PillList.filter({ $0.time == stringDate })
-            
-            print(" ")
-            for item in history {
-                print("item title : \(item.title), item time : \(item.time)")
-            }
-            print(" ")
-            
-            guard let todayHistoryIndex: Int =  store.historyList.index(where: { $0.time == stringDate }) else {
-                store.historyList.append(TimeLineSection(time: stringDate, Pills: history))
-                return
-            }
-            
-            print("")
-            print("todayHistoryIndex 값 : \(String(describing: todayHistoryIndex))")
-            print("")
-
-            for PillItem in history {
-                
-                for historyItem in store.historyList[todayHistoryIndex].Pills {
-                    if historyItem.title != PillItem.title && historyItem.time == PillItem.time {
-                        store.historyList[todayHistoryIndex].Pills.append(PillItem)
-                    }
-                }
-            }
-            
-            store.TimeLineUpdateCheck = false
+        if store.PillList.count != 0 {
+            store.PillListTimeSync()
+            store.historyListSync()
         }
+        
+        
         tableView.reloadData()
     }
     
@@ -68,16 +36,16 @@ class TimeLineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return store.historyList[section].Pills.count
+        return store.historyList[section].TimeLinePills.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineTableViewCell", for: indexPath) as! TimeLineTableViewCell
         
-        cell.pill = store.historyList[indexPath.section].Pills[indexPath.row]
+        cell.TimeLinePill = store.historyList[indexPath.section].TimeLinePills[indexPath.row]
         
-        for item in store.historyList[indexPath.section].Pills[indexPath.row].meridianCheckList {
+        for item in store.historyList[indexPath.section].TimeLinePills[indexPath.row].meridianCheckList {
             switch item.key {
             case .아침:
                 if item.value == .check {

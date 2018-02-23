@@ -12,7 +12,7 @@ class Pill: NSObject, NSCoding{
     var time = ""
 
 
-    init(iconName: String, title: String, memo: String, meridianCheckList: [Meridian: Check], detail: String, time: String) {
+    init(iconName: String, title: String, memo: String, meridianCheckList: [Meridian: Check], detail: String) {
         self.iconName = iconName
         self.title = title
         self.memo = memo
