@@ -6,13 +6,14 @@ class SettingTimeTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
+    var date: String = ""
     
     @IBAction func selectTime(_ sender: Any) {
         
         let dateformatter = DateFormatter()
         dateformatter.dateStyle = .none
         dateformatter.timeStyle = .short
-        let date = dateformatter.string(from: datePicker.date)
+        date = dateformatter.string(from: datePicker.date)
         timeLabel.text = date
         
     }

@@ -65,6 +65,12 @@
                                             <state key="normal" title="점심">
                                                 <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <state key="selected">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-Dk-VlZ">
                                             <rect key="frame" x="282" y="25" width="22" height="20"/>
@@ -74,6 +80,12 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <state key="normal" title="저녁">
                                                 <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <state key="selected">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmV-fq-VoT">
@@ -97,6 +109,12 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <state key="normal" title="아침">
                                                 <color key="titleColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <state key="selected">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                     </subviews>
@@ -571,7 +589,7 @@
                         <barButtonItem key="rightBarButtonItem" title="확인" id="7e8-K0-8r0">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="modalDismiss:" destination="Pfh-kx-oHl" id="ns5-5m-D7f"/>
+                                <action selector="saveButtonTapped:" destination="Pfh-kx-oHl" id="JhU-s1-itw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -684,6 +702,7 @@
                                         <constraint firstItem="pMc-vc-aeS" firstAttribute="top" secondItem="qbQ-MK-yUq" secondAttribute="top" constant="36" id="rr3-LZ-typ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="checkImage" destination="Fv9-lf-th4" id="4wY-ls-WPF"/>
                                     <outlet property="homeImageView" destination="g0r-87-8ym" id="IBK-A5-8lQ"/>
@@ -700,6 +719,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="홈" id="Gjb-SQ-ytz">
+                        <barButtonItem key="leftBarButtonItem" title="저장" id="knj-Vk-3az">
+                            <connections>
+                                <action selector="savebutton:" destination="0x7-p6-g13" id="uOY-Gn-t60"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="설정" id="1nc-OI-A5N">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

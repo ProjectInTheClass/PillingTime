@@ -2,6 +2,7 @@
 import UIKit
 
 class AddTableViewController: UITableViewController, UIPickerViewDataSource {
+
     
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var titleField: UITextField!
@@ -13,6 +14,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
     let iconNameList = ["a_pills-2", "a_pills", "a_medicine_glass",
                         "a_tablets", "a_medicine", "a_tablet", "a_drugs"]
     let pickerArray = ["식후 1시간", "식후 30분", "식전 30분", "식전 1시간"]
+    
+    let store = DataCenter.sharedInstnce
     var timeList: [Meridian: Check] = [:]
     var PickerSelectedValue = "식후 1시간"
     
@@ -50,22 +53,24 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
         if iconName != ""
             && (titleField.text != nil)
             && [Meridian](timeList.keys).count != 0{
-            let pill = Pill(iconName: iconName, title: titleField.text!,
-                            memo: memoTextView.text, meridianCheckList: timeList,
-                            detail: PickerSelectedValue)
-            
+
             // 현재 날짜 가져와 pill.time에 설정
             let date = Date()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let stringDate = dateFormatter.string(from: date)
-            pill.time = stringDate
+            
+            let pill = Pill(iconName: iconName, title: titleField.text!,
+                            memo: memoTextView.text, meridianCheckList: timeList,
+                            detail: PickerSelectedValue, time: stringDate)
+            
+
             
             print(pill.time)
             
-            PillList.append(pill)
-            HomeUpdateCheck = true
-            TimeLineUpdateCheck = true
+            store.PillList.append(pill)
+            store.HomeUpdateCheck = true
+            store.TimeLineUpdateCheck = true
             self.dismiss(animated: true, completion: nil)
             
         } else {

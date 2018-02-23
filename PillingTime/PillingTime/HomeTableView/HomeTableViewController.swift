@@ -1,18 +1,17 @@
 
 import UIKit
 
-var heightOfHeader : CGFloat = 50
-
-var PillList: [Pill] = []
-var classified: [ExpandableSection] = []
-var HomeUpdateCheck = false
-var TimeLineUpdateCheck = false
-
 class HomeTableViewController: UITableViewController {
+    var heightOfHeader : CGFloat = 50
     
+    let store = DataCenter.sharedInstnce
     let sectionImageNames = ["sunrise", "sun", "misty-day"]
     let sectionNames = ["아침", "점심", "저녁"]
 
+    @IBAction func savebutton(_ sender: Any) {
+        DataCenter.sharedInstnce.save()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +21,7 @@ class HomeTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 62
         
-        classified =  [ ExpandableSection(meridian: .아침, isExpanded: false, Pills: []),
+        store.classified =  [ ExpandableSection(meridian: .아침, isExpanded: false, Pills: []),
                         ExpandableSection(meridian: .점심, isExpanded: false, Pills: []),
                         ExpandableSection(meridian: .저녁, isExpanded: false, Pills: [])]
         
@@ -32,26 +31,26 @@ class HomeTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if PillList.count != 0 && HomeUpdateCheck == true {
+        if store.PillList.count != 0 && store.HomeUpdateCheck == true {
             
-            for item in PillList {
+            for item in store.PillList {
                 for key in item.meridianCheckList.keys {
                     if key == .아침 {
-                        if classified[0].Pills.index(where: { $0 == item }) == nil {
-                            classified[0].Pills.append(item)
+                        if store.classified[0].Pills.index(where: { $0.title == item.title }) == nil {
+                            store.classified[0].Pills.append(item)
                         }
                     } else if key == .점심 {
-                        if classified[1].Pills.index(where: { $0 == item }) == nil {
-                            classified[1].Pills.append(item)
+                        if store.classified[1].Pills.index(where: { $0.title == item.title }) == nil {
+                            store.classified[1].Pills.append(item)
                         }
                     } else if key == .저녁{
-                        if classified[2].Pills.index(where: { $0 == item }) == nil {
-                            classified[2].Pills.append(item)
+                        if store.classified[2].Pills.index(where: { $0.title == item.title }) == nil {
+                            store.classified[2].Pills.append(item)
                         }
                     }
                 }
             }
-            HomeUpdateCheck = false
+            store.HomeUpdateCheck = false
         }
         
         tableView.reloadData()
@@ -62,30 +61,71 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return classified.count
+        return store.classified.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if classified[section].isExpanded == false {
+        if store.classified[section].isExpanded == false {
             return 0
         }
         
-        return classified[section].Pills.count
+        return store.classified[section].Pills.count
     }
 
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        //let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+//        let cell = tableView.cellForRow(at: indexPath) as! HomeTableViewCell
+//
+//        var index: Meridian
+//
+//        switch  indexPath.section{
+//        case 0:
+//            index = .아침
+//        case 1:
+//            index = .점심
+//        default:
+//            index = .저녁
+//        }
+//
+//        let item = store.classified[indexPath.section].Pills[indexPath.row]
+//
+//        if item.meridianCheckList[index] == .uncheck {
+//            item.meridianCheckList[index] = .check
+//            cell.checkImage.image = UIImage(named: "Checked")
+//            print("========================================item.meridianCheckList[index] == .uncheck=================================================")
+//
+//        } else {
+//            item.meridianCheckList[index] = .uncheck
+//            cell.checkImage.image = UIImage(named: "Unchecked Light")
+//            print("========================================item.meridianCheckList[index] != .uncheck=================================================")
+//        }
+//
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
         let tap = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+        var index: Meridian
         
-        cell.homeImageView.image = UIImage(named: classified[indexPath.section].Pills[indexPath.row].iconName)
-        cell.titleLabel.text = classified[indexPath.section].Pills[indexPath.row].title
-        cell.memoLabel.text = classified[indexPath.section].Pills[indexPath.row].memo
-        cell.timeLabel.text = classified[indexPath.section].Pills[indexPath.row].detail
+        cell.pill = store.classified[indexPath.section].Pills[indexPath.row]
         cell.checkImage.tag = indexPath.section
         cell.homeImageView.tag = indexPath.row
-        
         cell.addGestureRecognizer(tap)
+        
+        switch  indexPath.section{
+        case 0:
+            index = .아침
+        case 1:
+            index = .점심
+        default:
+            index = .저녁
+        }
+        
+        if store.classified[indexPath.section].Pills[indexPath.row].meridianCheckList[index] == .check {
+            cell.checkImage.image = UIImage(named: "Checked")
+        } else {
+            cell.checkImage.image = UIImage(named: "Unchecked Light")
+        }
         
         return cell
     }
@@ -94,8 +134,8 @@ class HomeTableViewController: UITableViewController {
         let cell = sender.view as! HomeTableViewCell
         let section = cell.checkImage.tag
         let row = cell.homeImageView.tag
-        
         var index: Meridian
+
         switch  section{
         case 0:
             index = .아침
@@ -105,11 +145,12 @@ class HomeTableViewController: UITableViewController {
             index = .저녁
         }
         
-        if classified[section].Pills[row].meridianCheckList[index] == .uncheck {
-            classified[section].Pills[row].meridianCheckList[index] = .check
+
+        if store.classified[section].Pills[row].meridianCheckList[index] == .uncheck {
+            store.classified[section].Pills[row].meridianCheckList[index] = .check
             cell.checkImage.image = UIImage(named: "Checked")
         } else {
-            classified[section].Pills[row].meridianCheckList[index] = .uncheck
+            store.classified[section].Pills[row].meridianCheckList[index] = .uncheck
             cell.checkImage.image = UIImage(named: "Unchecked Light")
         }
     }
@@ -133,9 +174,9 @@ class HomeTableViewController: UITableViewController {
         let headerView  = sender.view as! HeaderView
         let section = headerView.headerLabel.tag
         
-        if classified[section].Pills.count == 0 { return }
+        if store.classified[section].Pills.count == 0 { return }
         
-        let i = classified[section].Pills.count - 1
+        let i = store.classified[section].Pills.count - 1
         var indexPaths = [IndexPath]()
         for row in 0...i{
             let indexPath = IndexPath(row: row, section: section)
@@ -144,17 +185,16 @@ class HomeTableViewController: UITableViewController {
         }
         
         
-        let isExpanded = classified[section].isExpanded
-        classified[section].isExpanded = !isExpanded
+        let isExpanded = store.classified[section].isExpanded
+        store.classified[section].isExpanded = !isExpanded
         
         headerView.rightHeaderImageView.image = UIImage(named: isExpanded ? "underChevron" : "chevron")
         
         if isExpanded {
-            tableView.deleteRows(at: indexPaths, with: .fade)
+            self.tableView.deleteRows(at: indexPaths, with: .fade)
         } else {
-            tableView.insertRows(at: indexPaths, with: .fade)
+            self.tableView.insertRows(at: indexPaths, with: .fade)
         }
-        
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -163,7 +203,7 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            classified[indexPath.section].Pills.remove(at: indexPath.row)
+            store.classified[indexPath.section].Pills.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }

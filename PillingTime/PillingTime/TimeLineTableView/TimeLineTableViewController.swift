@@ -1,17 +1,14 @@
 
 import UIKit
 
-var historyList: [TimeLineSection] = []
-//var history: [Pill] = []
-
 class TimeLineTableViewController: UITableViewController {
     
+    let store = DataCenter.sharedInstnce
     let checkImage = "Ellipse"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("TimeLinePillList.count 값 : \(PillList.count)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -19,7 +16,7 @@ class TimeLineTableViewController: UITableViewController {
         
         print("TimeLine Table viewWillAppear 시작")
         
-        if PillList.count != 0 && TimeLineUpdateCheck == true {
+        if store.PillList.count != 0 && store.TimeLineUpdateCheck == true {
             print("PillList.count != 0 && TimeLineUpdateCheck == true")
             
             let date = Date()
@@ -27,7 +24,7 @@ class TimeLineTableViewController: UITableViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let stringDate = dateFormatter.string(from: date)
             
-            let history = PillList.filter({ $0.time == stringDate })
+            let history = store.PillList.filter({ $0.time == stringDate })
             
             print(" ")
             for item in history {
@@ -35,8 +32,8 @@ class TimeLineTableViewController: UITableViewController {
             }
             print(" ")
             
-            guard let todayHistoryIndex: Int =  historyList.index(where: { $0.time == stringDate }) else {
-                historyList.append(TimeLineSection(time: stringDate, Pills: history))
+            guard let todayHistoryIndex: Int =  store.historyList.index(where: { $0.time == stringDate }) else {
+                store.historyList.append(TimeLineSection(time: stringDate, Pills: history))
                 return
             }
             
@@ -47,22 +44,22 @@ class TimeLineTableViewController: UITableViewController {
             for PillItem in history {
 //                print("item title : \(PillItem.title), item time : \(PillItem.time)")
                 
-                for historyItem in historyList[todayHistoryIndex].Pills {
+                for historyItem in store.historyList[todayHistoryIndex].Pills {
 //                    print("item title : \(historyItem.title), item time : \(historyItem.time)")
                     if historyItem.title != PillItem.title && historyItem.time == PillItem.time {
-                        historyList[todayHistoryIndex].Pills.append(PillItem)
+                        store.historyList[todayHistoryIndex].Pills.append(PillItem)
 //                        print("historyList에 값 추가 =======================================================================================================")
                     }
                 }
             }
- 
-            print("")
-            for item in historyList[todayHistoryIndex].Pills {
-                print("historyList[todayHistoryIndex].Pills 시간 값 : \(item.time)")
-            }
-            print("")
+//
+//            print("")
+//            for item in store.historyList[todayHistoryIndex].Pills {
+//                print("historyList[todayHistoryIndex].Pills 시간 값 : \(item.time)")
+//            }
+//            print("")
             
-            TimeLineUpdateCheck = false
+            store.TimeLineUpdateCheck = false
         }
         tableView.reloadData()
     }
@@ -76,46 +73,42 @@ class TimeLineTableViewController: UITableViewController {
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return historyList.count
+        return store.historyList.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historyList[section].Pills.count
+        return store.historyList[section].Pills.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineTableViewCell", for: indexPath) as! TimeLineTableViewCell
         
-            cell.titleLabel.text = historyList[indexPath.section].Pills[indexPath.row].title
-            cell.memoLabel.text = historyList[indexPath.section].Pills[indexPath.row].memo
+        cell.pill = store.historyList[indexPath.section].Pills[indexPath.row]
         
-        for item in historyList[indexPath.section].Pills[indexPath.row].meridianCheckList {
+        for item in store.historyList[indexPath.section].Pills[indexPath.row].meridianCheckList {
             switch item.key {
             case .아침:
                 if item.value == .check {
                     cell.morningImageView.image = UIImage(named: checkImage)
-                    cell.morningButton.isEnabled = true
                 } else {
-                    cell.morningImageView.image = UIImage(named: "")
-                    //cell.morningButton.isEnabled = true
+                    cell.morningImageView.image = UIImage(named: " ")
                 }
+                cell.morningButton.isEnabled = true
             case .점심:
                 if item.value == .check {
                     cell.lunchImageView.image = UIImage(named: checkImage)
-                    cell.lunchButton.isEnabled = true
                 } else {
-                    cell.lunchImageView.image = UIImage(named: "")
-                    //cell.lunchButton.isEnabled = false
+                    cell.lunchImageView.image = UIImage(named: " ")
                 }
+                cell.lunchButton.isEnabled = true
             case .저녁:
                 if item.value == .check {
                     cell.dinnerImageView.image = UIImage(named: checkImage)
-                    cell.dinnerButton.isEnabled = true
                 } else {
-                    cell.dinnerImageView.image = UIImage(named: "")
-                    //cell.dinnerButton.isEnabled = true
+                    cell.dinnerImageView.image = UIImage(named: " ")
                 }
+                cell.dinnerButton.isEnabled = true
             }
         }
         
@@ -123,8 +116,8 @@ class TimeLineTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if historyList.count != 0 {
-            let stringDate = historyList[section].time
+        if store.historyList.count != 0 {
+            let stringDate = store.historyList[section].time
             return stringDate
         } else {
             return nil

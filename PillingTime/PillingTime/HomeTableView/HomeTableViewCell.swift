@@ -17,6 +17,18 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     
+    var pill: Pill? {
+        didSet {
+            guard let pill = pill else { return }
+            
+            self.homeImageView.image = UIImage(named: pill.iconName)
+            self.titleLabel.text = pill.title
+            self.memoLabel.text = pill.memo
+            self.timeLabel.text = pill.detail
+            
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

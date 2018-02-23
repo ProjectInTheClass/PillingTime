@@ -25,7 +25,7 @@
 		F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D56020300ED900102ABF /* ExpandableSection.swift */; };
 		F441D58220305CBB00102ABF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D58020305CBB00102ABF /* HeaderView.swift */; };
 		F441D58320305CBB00102ABF /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F441D58120305CBB00102ABF /* HeaderView.xib */; };
-		F4A9DDE62031ED5F00FD4A3A /* PPillList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */; };
+		F4EF6906203E9581001D27FD /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EF6905203E9581001D27FD /* DataCenter.swift */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
 		F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +51,7 @@
 		F441D56020300ED900102ABF /* ExpandableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSection.swift; sourceTree = "<group>"; };
 		F441D58020305CBB00102ABF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F441D58120305CBB00102ABF /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
-		F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPillList.swift; sourceTree = "<group>"; };
+		F4EF6905203E9581001D27FD /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +155,7 @@
 		F4A9DDE42031ED1D00FD4A3A /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				F4A9DDE52031ED5F00FD4A3A /* PPillList.swift */,
+				F4EF6905203E9581001D27FD /* DataCenter.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -233,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EF6906203E9581001D27FD /* DataCenter.swift in Sources */,
 				F441D559202F51D300102ABF /* HomeTableViewController.swift in Sources */,
 				F43C9D2B202D6D3500B6DBC5 /* SettingTimeTableViewCell.swift in Sources */,
 				F441D55E202FF96600102ABF /* HomeTableViewCell.swift in Sources */,
@@ -243,7 +244,6 @@
 				F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */,
 				F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
-				F4A9DDE62031ED5F00FD4A3A /* PPillList.swift in Sources */,
 				F441D58220305CBB00102ABF /* HeaderView.swift in Sources */,
 				F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */,
 				F408360F20317C9A00368B96 /* TimeLineSection.swift in Sources */,

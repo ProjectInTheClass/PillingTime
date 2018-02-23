@@ -12,6 +12,23 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var dinnerButton: UIButton!
 
 
+    var pill: Pill? {
+        didSet {
+            guard let pill = pill else { return }
+            
+            self.listImageView.image = UIImage(named: pill.iconName)
+            self.titleLabel.text = pill.title
+            self.memoLabel.text = pill.memo
+            
+        }
+    }
+    
+    override func prepareForReuse() {
+        self.morningButton.isEnabled = false
+        self.lunchButton.isEnabled = false
+        self.dinnerButton.isEnabled = false
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

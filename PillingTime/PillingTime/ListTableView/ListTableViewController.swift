@@ -3,6 +3,8 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
+    let store = DataCenter.sharedInstnce
+    
     @IBAction func tabButton(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -31,20 +33,15 @@ class ListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return PillList.count
+        return store.PillList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
-        
-        cell.listImageView.image = UIImage(named: PillList[indexPath.row].iconName)
-        cell.titleLabel.text = PillList[indexPath.row].title
-        cell.memoLabel.text = PillList[indexPath.row].memo
-        cell.titleLabel.tag = indexPath.section
-        cell.memoLabel.tag = indexPath.row
-        
-        for item in PillList[indexPath.row].meridianCheckList {
+        cell.pill = store.PillList[indexPath.row]
+
+        for item in store.PillList[indexPath.row].meridianCheckList {
             switch item.key {
             case .아침:
                 if item.value == .check {
@@ -52,25 +49,26 @@ class ListTableViewController: UITableViewController {
                 } else {
                     cell.morningButton.isSelected = false
                 }
+                cell.morningButton.isEnabled = true
             case .점심:
                 if item.value == .check {
                     cell.lunchButton.isSelected = true
                 } else {
                     cell.lunchButton.isSelected = false
                 }
+                cell.lunchButton.isEnabled = true
             case .저녁:
                 if item.value == .check {
                     cell.dinnerButton.isSelected = true
                 } else {
                     cell.dinnerButton.isSelected = false
                 }
+                cell.dinnerButton.isEnabled = true
             }
         }
+        
         return cell
     }
-    
-    
-    
     
         
     override func viewWillAppear(_ animated: Bool) {
@@ -83,14 +81,15 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             var i = 0
-            for item in classified {
-                if let index = item.Pills.index(where: { $0 == PillList[indexPath.row]}){
-                    classified[i].Pills.remove(at: index)
+            for item in store.classified {
+                //if let index = item.Pills.index(where: { $0 == store.PillList[indexPath.row]}){
+                if let index = item.Pills.index(where: { $0.title == store.PillList[indexPath.row].title}){
+                    store.classified[i].Pills.remove(at: index)
                 }
                 i += 1
             }
             
-            PillList.remove(at: indexPath.row)
+            store.PillList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }

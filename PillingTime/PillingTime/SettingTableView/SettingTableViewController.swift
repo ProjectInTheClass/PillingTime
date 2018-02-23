@@ -10,11 +10,6 @@ class SettingTableViewController: UITableViewController {
     let sectionsName = ["시간대별 설정", "알림 스타일"]
     let timeItem = ["아침", "점심", "저녁"]
     let switchItem = ["잠금 화면에서 보기", "배지표기(상태바)"]
-   
-    
-    @IBAction func modalDismiss(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,4 +122,14 @@ class SettingTableViewController: UITableViewController {
         return sectionsName[section]
     }
 
+}
+
+extension SettingTableViewController {
+    @IBAction func modalDismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
+    
 }
