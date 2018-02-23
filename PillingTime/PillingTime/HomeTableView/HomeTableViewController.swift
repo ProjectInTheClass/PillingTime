@@ -8,9 +8,6 @@ class HomeTableViewController: UITableViewController {
     let sectionImageNames = ["sunrise", "sun", "misty-day"]
     let sectionNames = ["아침", "점심", "저녁"]
 
-    @IBAction func savebutton(_ sender: Any) {
-        DataCenter.sharedInstnce.save()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,14 +20,12 @@ class ListTableViewCell: UITableViewCell {
             self.titleLabel.text = pill.title
             self.memoLabel.text = pill.memo
             
+            self.morningButton.isEnabled = false
+            self.lunchButton.isEnabled = false
+            self.dinnerButton.isEnabled = false
         }
     }
     
-    override func prepareForReuse() {
-        self.morningButton.isEnabled = false
-        self.lunchButton.isEnabled = false
-        self.dinnerButton.isEnabled = false
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

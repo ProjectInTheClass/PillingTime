@@ -42,22 +42,13 @@ class TimeLineTableViewController: UITableViewController {
             print("")
 
             for PillItem in history {
-//                print("item title : \(PillItem.title), item time : \(PillItem.time)")
                 
                 for historyItem in store.historyList[todayHistoryIndex].Pills {
-//                    print("item title : \(historyItem.title), item time : \(historyItem.time)")
                     if historyItem.title != PillItem.title && historyItem.time == PillItem.time {
                         store.historyList[todayHistoryIndex].Pills.append(PillItem)
-//                        print("historyList에 값 추가 =======================================================================================================")
                     }
                 }
             }
-//
-//            print("")
-//            for item in store.historyList[todayHistoryIndex].Pills {
-//                print("historyList[todayHistoryIndex].Pills 시간 값 : \(item.time)")
-//            }
-//            print("")
             
             store.TimeLineUpdateCheck = false
         }

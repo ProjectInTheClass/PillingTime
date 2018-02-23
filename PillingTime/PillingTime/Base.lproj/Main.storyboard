@@ -719,11 +719,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="홈" id="Gjb-SQ-ytz">
-                        <barButtonItem key="leftBarButtonItem" title="저장" id="knj-Vk-3az">
-                            <connections>
-                                <action selector="savebutton:" destination="0x7-p6-g13" id="uOY-Gn-t60"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="설정" id="1nc-OI-A5N">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

@@ -26,6 +26,7 @@
 		F441D58220305CBB00102ABF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D58020305CBB00102ABF /* HeaderView.swift */; };
 		F441D58320305CBB00102ABF /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F441D58120305CBB00102ABF /* HeaderView.xib */; };
 		F4EF6906203E9581001D27FD /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EF6905203E9581001D27FD /* DataCenter.swift */; };
+		F4EF690A203FC074001D27FD /* TimeLinePill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EF6909203FC074001D27FD /* TimeLinePill.swift */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
 		F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		F441D58020305CBB00102ABF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F441D58120305CBB00102ABF /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		F4EF6905203E9581001D27FD /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		F4EF6909203FC074001D27FD /* TimeLinePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLinePill.swift; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		F4F69CEF202C54DC00D8C77C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				F423BA42202C2CBE000C4A8F /* TimeLineTableViewCell.swift */,
 				F423BA44202C2D32000C4A8F /* TimeLineTableViewController.swift */,
 				F408360E20317C9A00368B96 /* TimeLineSection.swift */,
+				F4EF6909203FC074001D27FD /* TimeLinePill.swift */,
 			);
 			path = TimeLineTableView;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */,
 				F4F69CF0202C54DC00D8C77C /* SettingTableViewController.swift in Sources */,
 				F41D472A200F53460000E758 /* AppDelegate.swift in Sources */,
+				F4EF690A203FC074001D27FD /* TimeLinePill.swift in Sources */,
 				F441D58220305CBB00102ABF /* HeaderView.swift in Sources */,
 				F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */,
 				F408360F20317C9A00368B96 /* TimeLineSection.swift in Sources */,

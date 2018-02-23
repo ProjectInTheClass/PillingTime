@@ -2,28 +2,6 @@
 import Foundation
 
 
-//class Pill: Codable{
-//    
-//    var iconName = ""
-//    var title = ""
-//    var memo = ""
-//    var meridianCheckList: [Meridian: Check] = [:]
-//    var detail = ""
-//    var time = ""
-//    
-//    
-//    init(iconName: String, title: String, memo: String, meridianCheckList: [Meridian: Check], detail: String, time: String) {
-//        self.iconName = iconName
-//        self.title = title
-//        self.memo = memo
-//        self.meridianCheckList = meridianCheckList
-//        self.detail = detail
-//        self.time = time
-//    }
-//    
-//}
-
-
 class Pill: NSObject, NSCoding{
 
     var iconName = ""
@@ -41,12 +19,25 @@ class Pill: NSObject, NSCoding{
         self.meridianCheckList = meridianCheckList
         self.detail = detail
     }
+    
+    init(iconName: String, title: String, memo: String, detail: String, time: String) {
+        self.iconName = iconName
+        self.title = title
+        self.memo = memo
+        self.detail = detail
+    }
 
     func encode(with aCoder: NSCoder) {
+        var EncodeMeridianCheckList: [String: String] = [:]
+        
+        for (key, value) in meridianCheckList {
+            EncodeMeridianCheckList[key.rawValue] = value.rawValue
+        }
+        
         aCoder.encode(self.iconName, forKey: "iconName")
         aCoder.encode(self.title, forKey: "title")
         aCoder.encode(self.memo, forKey: "memo")
-        aCoder.encode(self.meridianCheckList, forKey: "meridianCheckList")
+        aCoder.encode(EncodeMeridianCheckList, forKey: "meridianCheckList")
         aCoder.encode(self.detail, forKey: "detail")
         aCoder.encode(self.time, forKey: "time")
     }
@@ -55,37 +46,29 @@ class Pill: NSObject, NSCoding{
         guard let iconName = aDecoder.decodeObject(forKey: "iconName") as? String,
             let title = aDecoder.decodeObject(forKey: "title") as? String,
             let memo = aDecoder.decodeObject(forKey: "memo") as? String,
-            let meridianCheckList = aDecoder.decodeObject(forKey: "meridianCheckList") as? [Meridian: Check],
+            let initMeridianCheckList = aDecoder.decodeObject(forKey: "meridianCheckList") as? [String: String],
             let detail = aDecoder.decodeObject(forKey: "detail") as? String,
             let time = aDecoder.decodeObject(forKey: "time") as? String else { return nil }
-
-        self.init(iconName: iconName, title: title, memo: memo, meridianCheckList: meridianCheckList, detail: detail, time: time)
+        
+        self.init(iconName: iconName, title: title, memo: memo, detail: detail, time: time)
+        
+        for (key, value) in initMeridianCheckList {
+            meridianCheckList[Meridian(rawValue: key)!] = Check(rawValue: value)
+        }
     }
-
 }
 
-//enum Meridian: String, Codable {
-//    case 아침 = "아침"
-//    case 점심 = "점심"
-//    case 저녁 = "저녁"
-//}
-//
-//enum Check: String, Codable {
-//    case check
-//    case uncheck
-//}
 
-enum Meridian: String, Codable {
+enum Meridian: String {
     case 아침 = "아침"
     case 점심 = "점심"
     case 저녁 = "저녁"
 }
 
-enum Check: String, Codable {
+enum Check: String {
     case check = "check"
     case uncheck = "uncheck"
 }
-
 
 enum subTime {
     case 식후1시간
