@@ -25,6 +25,7 @@
 		F441D56120300ED900102ABF /* ExpandableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D56020300ED900102ABF /* ExpandableSection.swift */; };
 		F441D58220305CBB00102ABF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441D58020305CBB00102ABF /* HeaderView.swift */; };
 		F441D58320305CBB00102ABF /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F441D58120305CBB00102ABF /* HeaderView.xib */; };
+		F4E6109120401AB700E1FB31 /* AlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E6109020401AB700E1FB31 /* AlarmData.swift */; };
 		F4EF6906203E9581001D27FD /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EF6905203E9581001D27FD /* DataCenter.swift */; };
 		F4EF690A203FC074001D27FD /* TimeLinePill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EF6909203FC074001D27FD /* TimeLinePill.swift */; };
 		F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */; };
@@ -52,6 +53,7 @@
 		F441D56020300ED900102ABF /* ExpandableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSection.swift; sourceTree = "<group>"; };
 		F441D58020305CBB00102ABF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F441D58120305CBB00102ABF /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		F4E6109020401AB700E1FB31 /* AlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmData.swift; sourceTree = "<group>"; };
 		F4EF6905203E9581001D27FD /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		F4EF6909203FC074001D27FD /* TimeLinePill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLinePill.swift; sourceTree = "<group>"; };
 		F4F69CE9202C432F00D8C77C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F4EF6905203E9581001D27FD /* DataCenter.swift */,
+				F4E6109020401AB700E1FB31 /* AlarmData.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				F4F69CEA202C432F00D8C77C /* AddTableViewController.swift in Sources */,
 				F408360F20317C9A00368B96 /* TimeLineSection.swift in Sources */,
 				F423BA43202C2CBE000C4A8F /* TimeLineTableViewCell.swift in Sources */,
+				F4E6109120401AB700E1FB31 /* AlarmData.swift in Sources */,
 				F423BA45202C2D32000C4A8F /* TimeLineTableViewController.swift in Sources */,
 				F423BA3F202C19AE000C4A8F /* ListTableViewCell.swift in Sources */,
 			);
@@ -394,7 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PillingTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.PillingTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PillingTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.PillingTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

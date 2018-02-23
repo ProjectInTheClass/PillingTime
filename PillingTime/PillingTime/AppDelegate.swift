@@ -1,5 +1,6 @@
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DataCenter.sharedInstnce.PillListTimeSync()
         
         UINavigationBar.appearance().barTintColor = UIColor.white
+        
+        // 알람 delegate 등록
+        UNUserNotificationCenter.current().delegate = self
         
         return true
     }
@@ -49,4 +53,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+// 알람
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

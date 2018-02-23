@@ -22,6 +22,7 @@ class DataCenter {
     func save() {
         let encodeDate = NSKeyedArchiver.archivedData(withRootObject: PillList)
         UserDefaults.standard.setValue(encodeDate, forKey: "PillList")
+        
         UserDefaults.standard.set(try? PropertyListEncoder().encode(historyList), forKey: "historyList")
     }
 

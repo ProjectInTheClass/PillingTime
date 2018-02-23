@@ -1,25 +1,55 @@
 
 import UIKit
+import UserNotifications
 
 class SettingTableViewController: UITableViewController {
+    
+    let alarmStore = AlarmData.sharedInstnce
     
     private var dateCellExpanded: Bool = false
     private var dateCellExpanded1: Bool = false
     private var dateCellExpanded2: Bool = false
     
-    let sectionsName = ["시간대별 설정", "알림 스타일"]
+    let sectionsName = ["알람 설정", "시간대별 설정"]
     let timeItem = ["아침", "점심", "저녁"]
-    let switchItem = ["잠금 화면에서 보기", "배지표기(상태바)"]
+    let switchItem = ["알람 설정"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.tableFooterView = UIView()
-    }
+        
+        // 알람
+        UNUserNotificationCenter.current().requestAuthorization(options:
+            [.alert, .badge, .sound]) { (success, error) in
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            if error != nil {
+                print("Authorization Unsuccessfull")
+            } else {
+                print("Authorization Successfull")
+            }
+        }
+    }
+    
+    // 알람
+    func timedNotifications(inSeconds: TimeInterval, completion: @escaping (_ Success: Bool) -> ()) {
+        
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Breaking News"
+        content.subtitle = "Net Neutrality is not working"
+        content.body = "zzzzzzzzzzzzzzzzz"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if error != nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,9 +61,9 @@ class SettingTableViewController: UITableViewController {
         
         switch section{
         case 0:
-            return timeItem.count
-        case 1:
             return switchItem.count
+        case 1:
+            return timeItem.count
         default:
             return 0
         }
@@ -41,14 +71,31 @@ class SettingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTimeTableViewCell", for: indexPath) as! SettingTimeTableViewCell
-            cell.titleLabel?.text = timeItem[indexPath.row]
-            return cell
-        default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingAlarmTableViewCell", for: indexPath) as! SettingAlarmTableViewCell
             cell.titleLabel?.text = switchItem[indexPath.row]
+            
+            let settingSwitchState = UserDefaults.standard.bool(forKey: "settingSwitchState")
+            cell.settingSwitch.setOn(settingSwitchState, animated: false)
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTimeTableViewCell", for: indexPath) as! SettingTimeTableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.titleLabel.tag = indexPath.row
+            cell.titleLabel?.text = timeItem[indexPath.row]
+            
+            guard let datePickerData = UserDefaults.standard.object(forKey: "datePicker\(String(indexPath.row))") as? Date else { return cell}
+            cell.datePicker.setDate(datePickerData, animated: false)
+            
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .none
+            dateformatter.timeStyle = .short
+            cell.timeLabel.text = dateformatter.string(from: datePickerData)
+
             return cell
         }
     }
@@ -57,7 +104,7 @@ class SettingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
                 if dateCellExpanded {
@@ -90,7 +137,7 @@ class SettingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
                 if dateCellExpanded {
@@ -130,6 +177,44 @@ extension SettingTableViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        // 알람
+        timedNotifications(inSeconds: 3) { (success) in
+            if success {
+                print("Successfully Notified")
+            }
+        }
+    
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

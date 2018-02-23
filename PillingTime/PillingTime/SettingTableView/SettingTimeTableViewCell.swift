@@ -15,12 +15,14 @@ class SettingTimeTableViewCell: UITableViewCell {
         dateformatter.timeStyle = .short
         date = dateformatter.string(from: datePicker.date)
         timeLabel.text = date
-        
+        UserDefaults.standard.set(datePicker.date, forKey: "datePicker\(String(titleLabel.tag))")
+        print("date : \(date)")
     }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
