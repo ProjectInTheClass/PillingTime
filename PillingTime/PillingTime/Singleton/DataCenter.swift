@@ -18,26 +18,20 @@ class DataCenter {
     var TimeLineUpdateCheck = false
     var today = ""
 
-//    func save() {
-//        UserDefaults.standard.set(try? PropertyListEncoder().encode(PillList), forKey: "PillList")
-//    }
-//
-//    func load() {
-//        if let data = UserDefaults.standard.object(forKey: "PillList") as? Data {
-//            PillList = try! PropertyListDecoder().decode([Pill].self, from: data)
-//        }
-//    }
-
     
     func save() {
         let encodeDate = NSKeyedArchiver.archivedData(withRootObject: PillList)
         UserDefaults.standard.setValue(encodeDate, forKey: "PillList")
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(historyList), forKey: "historyList")
     }
 
     func load() {
         guard let encodeDate = UserDefaults.standard.value(forKeyPath: "PillList") as? Data else { return }
-        
         self.PillList = NSKeyedUnarchiver.unarchiveObject(with: encodeDate) as! [Pill]
+        
+        if let data = UserDefaults.standard.object(forKey: "historyList") as? Data {
+            historyList = try! PropertyListDecoder().decode([TimeLineSection].self, from: data)
+        }
     }
     
     // historyList를 PillList와 동기화
@@ -59,7 +53,7 @@ class DataCenter {
                         iconName: item.iconName,
                         title: item.title,
                         memo: item.memo,
-                        meridianCheckList: item.meridianCheckList,
+                        meridianCheckList: item.meridianCheckList.reduce(into: [String: String]()) { $0[$1.key.rawValue] = $1.value.rawValue },
                         detail: item.detail,
                         time: item.time ))
             }

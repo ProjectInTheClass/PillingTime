@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TimeLineSection {
+struct TimeLineSection: Codable{
     var time: String
     var TimeLinePills: [TimeLinePill]
 }

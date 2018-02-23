@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct TimeLinePill {
+struct TimeLinePill: Codable{
     var iconName = ""
     var title = ""
     var memo = ""
-    var meridianCheckList: [Meridian: Check] = [:]
+    var meridianCheckList: [String: String] = [:]
     var detail = ""
     var time = ""
 }

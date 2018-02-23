@@ -23,8 +23,6 @@ class TimeLineTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -46,23 +44,25 @@ class TimeLineTableViewController: UITableViewController {
         cell.TimeLinePill = store.historyList[indexPath.section].TimeLinePills[indexPath.row]
         
         for item in store.historyList[indexPath.section].TimeLinePills[indexPath.row].meridianCheckList {
-            switch item.key {
+            guard let key = Meridian(rawValue: item.key) else { return cell }
+            
+            switch key {
             case .아침:
-                if item.value == .check {
+                if Check(rawValue: item.value) == .check {
                     cell.morningImageView.image = UIImage(named: checkImage)
                 } else {
                     cell.morningImageView.image = UIImage(named: " ")
                 }
                 cell.morningButton.isEnabled = true
             case .점심:
-                if item.value == .check {
+                if Check(rawValue: item.value) == .check {
                     cell.lunchImageView.image = UIImage(named: checkImage)
                 } else {
                     cell.lunchImageView.image = UIImage(named: " ")
                 }
                 cell.lunchButton.isEnabled = true
             case .저녁:
-                if item.value == .check {
+                if Check(rawValue: item.value) == .check {
                     cell.dinnerImageView.image = UIImage(named: checkImage)
                 } else {
                     cell.dinnerImageView.image = UIImage(named: " ")
