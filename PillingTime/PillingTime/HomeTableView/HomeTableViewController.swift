@@ -7,6 +7,7 @@ class HomeTableViewController: UITableViewController {
     let store = DataCenter.sharedInstnce
     let sectionImageNames = ["sunrise", "sun", "misty-day"]
     let sectionNames = ["아침", "점심", "저녁"]
+    
 
     
     override func viewDidLoad() {
@@ -32,6 +33,7 @@ class HomeTableViewController: UITableViewController {
             
             for item in store.PillList {
                 for key in item.meridianCheckList.keys {
+                    
                     if key == .아침 {
                         if store.classified[0].Pills.index(where: { $0.title == item.title }) == nil {
                             store.classified[0].Pills.append(item)
@@ -70,36 +72,6 @@ class HomeTableViewController: UITableViewController {
         
         return store.classified[section].Pills.count
     }
-
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-//        let cell = tableView.cellForRow(at: indexPath) as! HomeTableViewCell
-//
-//        var index: Meridian
-//
-//        switch  indexPath.section{
-//        case 0:
-//            index = .아침
-//        case 1:
-//            index = .점심
-//        default:
-//            index = .저녁
-//        }
-//
-//        let item = store.classified[indexPath.section].Pills[indexPath.row]
-//
-//        if item.meridianCheckList[index] == .uncheck {
-//            item.meridianCheckList[index] = .check
-//            cell.checkImage.image = UIImage(named: "Checked")
-//            print("========================================item.meridianCheckList[index] == .uncheck=================================================")
-//
-//        } else {
-//            item.meridianCheckList[index] = .uncheck
-//            cell.checkImage.image = UIImage(named: "Unchecked Light")
-//            print("========================================item.meridianCheckList[index] != .uncheck=================================================")
-//        }
-//
-//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
@@ -161,6 +133,7 @@ class HomeTableViewController: UITableViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(habdleExpandClose))
         headerView.addGestureRecognizer(tap)
+        headerView.countLabel.text = String(store.classified[section].Pills.count)
         headerView.leftHeaderImageView.image = UIImage(named: sectionImageNames[section])
         headerView.headerLabel.text = sectionNames[section]
         headerView.rightHeaderImageView.image = UIImage(named: "underChevron")
@@ -203,8 +176,20 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
+            let item = store.classified[indexPath.section].Pills[indexPath.row]
+            guard let index = store.PillList.index(of: item) else { return }
+            
+            let count = store.classified.filter( { $0.Pills.filter( { $0.title == item.title } ).first?.title == item.title } ).count - 1
+            print(" 남은 수 : \(count)")
+            
+            if count == 0 {
+                store.PillList.remove(at: index)
+            }
+            
             store.classified[indexPath.section].Pills.remove(at: indexPath.row)
+            store.PillList[index].meridianCheckList.removeValue(forKey: Meridian(rawValue: sectionNames[indexPath.section])!)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            tableView.reloadData()
         }
     }
 }

@@ -489,7 +489,7 @@
         <!--설정-->
         <scene sceneID="nre-X3-d10">
             <objects>
-                <tableViewController id="Pfh-kx-oHl" customClass="SettingTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Pfh-kx-oHl" customClass="SettingTableViewController" customModule="PillingTime" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="iry-oX-aEL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -509,11 +509,11 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OvN-Pt-VcQ">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OvN-Pt-VcQ">
                                             <rect key="frame" x="255" y="7" width="49" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <connections>
-                                                <action selector="buttonTapped:" destination="emS-Ym-JbR" eventType="valueChanged" id="DKi-Ri-XLI"/>
+                                                <action selector="settingSwitchTapped:" destination="Pfh-kx-oHl" eventType="valueChanged" id="Zdc-Al-trH"/>
                                             </connections>
                                         </switch>
                                     </subviews>
@@ -523,11 +523,11 @@
                                     <outlet property="titleLabel" destination="4hZ-Qf-l3U" id="lwk-ol-Bb5"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTimeTableViewCell" rowHeight="210" id="LVu-9R-XbO" customClass="SettingTimeTableViewCell" customModule="PillingTime" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100.5" width="320" height="210"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTimeTableViewCell" rowHeight="256" id="LVu-9R-XbO" customClass="SettingTimeTableViewCell" customModule="PillingTime" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100.5" width="320" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LVu-9R-XbO" id="qfX-TX-JzH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="209.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="255.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kn2-XW-PB0">
@@ -551,18 +551,16 @@
                                             </constraints>
                                         </stackView>
                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="f93-Uv-ot1">
-                                            <rect key="frame" x="0.0" y="29" width="320" height="216"/>
+                                            <rect key="frame" x="0.0" y="40" width="320" height="216"/>
                                             <date key="date" timeIntervalSinceReferenceDate="539780914.55177999">
                                                 <!--2018-02-08 11:08:34 +0000-->
                                             </date>
-                                            <connections>
-                                                <action selector="selectTime:" destination="LVu-9R-XbO" eventType="valueChanged" id="d7d-Rf-fxY"/>
-                                            </connections>
+                                            <locale key="locale" localeIdentifier="ko_KR"/>
                                         </datePicker>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Kn2-XW-PB0" firstAttribute="top" secondItem="qfX-TX-JzH" secondAttribute="top" constant="11.5" id="2B6-W7-HrP"/>
-                                        <constraint firstItem="f93-Uv-ot1" firstAttribute="top" secondItem="qfX-TX-JzH" secondAttribute="top" constant="29" id="Mga-gx-A4K"/>
+                                        <constraint firstItem="f93-Uv-ot1" firstAttribute="top" secondItem="qfX-TX-JzH" secondAttribute="top" constant="40" id="Mga-gx-A4K"/>
                                         <constraint firstItem="Kn2-XW-PB0" firstAttribute="leading" secondItem="qfX-TX-JzH" secondAttribute="leadingMargin" id="PxH-kQ-V1T"/>
                                         <constraint firstItem="f93-Uv-ot1" firstAttribute="leading" secondItem="qfX-TX-JzH" secondAttribute="leading" id="WLF-ug-daU"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Kn2-XW-PB0" secondAttribute="trailing" id="YPf-zy-Zz0"/>
@@ -582,38 +580,10 @@
                             <outlet property="delegate" destination="Pfh-kx-oHl" id="scj-YJ-RNu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="설정" id="hgO-N6-fi9">
-                        <barButtonItem key="leftBarButtonItem" title="취소" id="ttN-YT-TAD">
-                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="modalDismiss:" destination="Pfh-kx-oHl" id="5wk-mv-P78"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="확인" id="7e8-K0-8r0">
-                            <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="Pfh-kx-oHl" id="JhU-s1-itw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="설정" id="hgO-N6-fi9"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40g-Jf-sPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1759" y="-1442"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="sIw-Qc-X3A">
-            <objects>
-                <navigationController id="Nh8-As-kXB" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jd5-Z1-hbQ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Pfh-kx-oHl" kind="relationship" relationship="rootViewController" id="YlY-KI-pUE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kus-AZ-oa7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="833" y="-1441"/>
         </scene>
@@ -725,7 +695,7 @@
                         <barButtonItem key="rightBarButtonItem" title="설정" id="1nc-OI-A5N">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="Nh8-As-kXB" kind="showDetail" id="zzh-uq-3qH"/>
+                                <segue destination="Pfh-kx-oHl" kind="show" id="Qg7-ZY-NAn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

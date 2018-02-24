@@ -89,9 +89,11 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             var i = 0
+            
+            let pill = store.PillList[indexPath.row]
+            
             for item in store.classified {
-                //if let index = item.Pills.index(where: { $0 == store.PillList[indexPath.row]}){
-                if let index = item.Pills.index(where: { $0.title == store.PillList[indexPath.row].title}){
+                if let index = item.Pills.index(of: pill){
                     store.classified[i].Pills.remove(at: index)
                 }
                 i += 1

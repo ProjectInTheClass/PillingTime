@@ -13,5 +13,6 @@ class HeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var leftHeaderImageView: UIImageView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var rightHeaderImageView: UIImageView!
+    @IBOutlet weak var countLabel: UILabel!
     
 }
