@@ -21,7 +21,7 @@ class SettingTableViewController: UITableViewController {
     
     let sectionsName = ["알람 설정", "시간대별 설정"]
     let timeItem = ["아침", "점심", "저녁"]
-    let switchItem = ["아침 알람 설정", "점심 알람 설정", "저녁 알람 설정"]
+    let switchItem = ["아침 알람", "점심 알람", "저녁 알람"]
     let contents = [["body" : "아침 약 복용 시간입니다.", "identifier" : "morningAlarm"],
                     ["body" : "점심 약 복용 시간입니다.", "identifier" : "lunchAlarm"],
                     ["body" : "저녁 약 복용 시간입니다.", "identifier" : "dinnerAlarm"]]
@@ -214,6 +214,7 @@ extension SettingTableViewController {
         UserDefaults.standard.set(timeCell!.datePicker.date, forKey: "datePicker\(String(sender.tag))")
         
         
+        
         if alarmCellSwitchState == true {
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [contents[sender.tag]["identifier"]!])
             
@@ -243,7 +244,7 @@ extension SettingTableViewController {
         
         switch sender.tag {
         case 0:
-            timeCell =  firstTimeTableViewCell
+            timeCell = firstTimeTableViewCell
         case 1:
             timeCell = secondTimeTableViewCell
         case 2:

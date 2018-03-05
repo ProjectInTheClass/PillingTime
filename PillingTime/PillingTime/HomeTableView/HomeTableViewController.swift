@@ -153,7 +153,6 @@ class HomeTableViewController: UITableViewController {
         var indexPaths = [IndexPath]()
         for row in 0...i{
             let indexPath = IndexPath(row: row, section: section)
-            print(row, section)
             indexPaths.append(indexPath)
         }
         
@@ -180,7 +179,6 @@ class HomeTableViewController: UITableViewController {
             guard let index = store.PillList.index(of: item) else { return }
             
             let count = store.classified.filter( { $0.Pills.filter( { $0.title == item.title } ).first?.title == item.title } ).count - 1
-            print(" 남은 수 : \(count)")
             
             if count == 0 {
                 store.PillList.remove(at: index)

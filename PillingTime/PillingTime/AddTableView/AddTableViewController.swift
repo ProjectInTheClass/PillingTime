@@ -32,12 +32,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
         guard let title = sender.currentTitle, let time = Meridian(rawValue: title) else { return }
         
         if sender.isSelected == true {
-            print("Meridian 삭제")
             timeList.removeValue(forKey: time)
             sender.isSelected = false
             
         } else {
-            print("Meridian 추가")
             timeList[time] = .uncheck
             sender.isSelected = true
         }
@@ -70,7 +68,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDataSource {
                                               style: .default,
                                               handler: { (action: UIAlertAction)
                                                 -> Void in
-                print("닫기")
             })
             
             warningAlert.addAction(warningAction)

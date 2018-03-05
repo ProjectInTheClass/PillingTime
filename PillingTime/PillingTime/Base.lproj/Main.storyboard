@@ -102,7 +102,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz8-w0-KDa">
-                                            <rect key="frame" x="222" y="26" width="22" height="20"/>
+                                            <rect key="frame" x="222" y="25" width="22" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Gz8-w0-KDa" secondAttribute="height" multiplier="11:10" id="t2P-RS-OTk"/>
                                             </constraints>
@@ -119,7 +119,7 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Gz8-w0-KDa" firstAttribute="top" secondItem="9e1-jb-ShL" secondAttribute="topMargin" constant="15" id="22F-d4-eFe"/>
+                                        <constraint firstItem="Gz8-w0-KDa" firstAttribute="top" secondItem="9e1-jb-ShL" secondAttribute="topMargin" constant="14" id="22F-d4-eFe"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="WD0-Bf-hS3" secondAttribute="bottom" constant="16" id="3A7-CN-pti"/>
                                         <constraint firstItem="rRe-Dk-VlZ" firstAttribute="leading" secondItem="WD0-Bf-hS3" secondAttribute="trailing" constant="8" id="3eF-o3-dXt"/>
                                         <constraint firstItem="TgI-PX-C3U" firstAttribute="leading" secondItem="9e1-jb-ShL" secondAttribute="leadingMargin" id="3l4-OA-mc9"/>
@@ -142,7 +142,7 @@
                                         <constraint firstItem="nvO-9r-ZDl" firstAttribute="leading" secondItem="9e1-jb-ShL" secondAttribute="leading" constant="16" id="sa2-Wf-J6h"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="rRe-Dk-VlZ" secondAttribute="bottom" constant="16" id="w4h-T3-ow3"/>
                                         <constraint firstAttribute="bottom" secondItem="EmV-fq-VoT" secondAttribute="bottom" constant="18" id="yRC-ts-dOY"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Gz8-w0-KDa" secondAttribute="bottom" constant="15" id="zzg-Ra-jlx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Gz8-w0-KDa" secondAttribute="bottom" constant="16" id="zzg-Ra-jlx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -162,9 +162,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="목록" id="eGM-Yg-yrh">
-                        <barButtonItem key="leftBarButtonItem" title="편집" id="BSw-f1-Pxw">
-                            <color key="tintColor" red="0.41568627450980389" green="0.68627450980392157" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WMg-eF-Je2">
                             <color key="tintColor" red="0.41568627450000001" green="0.68627450980000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -556,6 +553,9 @@
                                                 <!--2018-02-08 11:08:34 +0000-->
                                             </date>
                                             <locale key="locale" localeIdentifier="ko_KR"/>
+                                            <connections>
+                                                <action selector="selectTime:" destination="Pfh-kx-oHl" eventType="valueChanged" id="AOc-V6-YM2"/>
+                                            </connections>
                                         </datePicker>
                                     </subviews>
                                     <constraints>
